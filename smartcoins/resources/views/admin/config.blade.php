@@ -95,15 +95,6 @@
                                     <button type="button" class="btn btn-danger btn-flat" id="btncancel-ethereum-address"><i class="fa fa-times"></i></button>
                                 </span>
                             </div>
-                        </li><li class="list-group-item">
-                            <b>Ethereum address</b> <a class="pull-right" id="ethereum-address-config" onclick="showEthereumAddressConfig()">{{ $eth_address }}</a>
-                            <div class="input-group input-group-sm" id="ethereum-address-config-input" style="display:none">
-                                <input type="text" class="form-control" key="ethereum-address" placeholder="Ethereum address" value="{{ $eth_address }}">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-success btn-flat" id="btnok-ethereum-address"><i class="fa fa-check"></i></button>
-                                    <button type="button" class="btn btn-danger btn-flat" id="btncancel-ethereum-address"><i class="fa fa-times"></i></button>
-                                </span>
-                            </div>
                         </li>
                         <li class="list-group-item">
                             <b>D-share Target (EAST) </b> <a class="pull-right" id="dshare-total-config" onclick="showDShareTotalConfig()">{{ $dshare_target }}</a>
