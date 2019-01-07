@@ -8,11 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class User extends Authenticatable implements MustVerifyEmail, HasMedia
 {
     use Notifiable, HasRoles;
     use HasMediaTrait;
+    // use LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -34,4 +36,8 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+
+    // protected static $logAttributes = ['username', 'email'];
 }

@@ -1,3 +1,6 @@
+@php
+    use App\Http\Controllers\MenuController;
+@endphp
 <aside class="main-sidebar">
     <section class="sidebar">
     <div class="user-panel">
@@ -31,6 +34,43 @@
             <li class="{{ (Route::currentRouteName() == "home.referral") ? 'active' : '' }}"><a href="{{route('home.referral')}}"><i class="fa fa-refresh"></i> <span>Referral</span></a></li>
             <li class="{{ (Route::currentRouteName() == "profileIndex") ? 'active' : '' }}"><a href="{{ route('profileIndex') }}"><i class="fa fa-user"></i> <span>Account</span></a></li>
             <li class="{{ (Route::currentRouteName() == "home.security") ? 'active' : '' }}"><a href="{{route('home.security')}}"><i class="fa fa-lock"></i> <span>Security</span></a></li>
+            @foreach(MenuController::loadMenu()->where('level', 1)->get() as $menu)
+                @if(MenuController::loadMenu()->where('parent', $menu->id)->count() > 0)
+                    @if(is_null($menu->role))
+                    <li class="treeview">
+                        <a href="#">
+                        <i class="fa fa-key"></i> <span>{{$menu->text}}</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            @foreach (MenuController::loadMenu()->where('parent', $menu->id)->get() as $submenu)
+                                <li class=""><a href="#"><i class="fa fa-circle-o"></i> {{$submenu->text}}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    @else
+                    @role($menu->role)
+                    <li class="treeview">
+                        <a href="#">
+                        <i class="fa fa-key"></i> <span>{{$menu->text}}</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            @foreach (MenuController::loadMenu()->where('parent', $menu->id)->get() as $submenu)
+                                <li class=""><a href="#"><i class="fa fa-circle-o"></i> {{$submenu->text}}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    @endrole
+                    @endif
+                @else
+                    <li class=""><a href="#"><i class="fa fa-gears"></i> <span>{{$menu->text}}</span></a></li>
+                @endif
+            @endforeach
             @role('administrator')
             <li class="treeview
                 {{ (Route::currentRouteName() == "admin.usermanage") ? 'active' : '' }}">
@@ -41,7 +81,7 @@
                 </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="{{ route('admin.usermanage') }}"><i class="fa fa-circle-o"></i> Menu</a></li>
+                    <li class=""><a href="{{ route('admin.managemenu') }}"><i class="fa fa-circle-o"></i> Menu</a></li>
                     <li class=""><a href="{{ route('admin.usermanage') }}"><i class="fa fa-circle-o"></i> Manage User</a></li>
                 </ul>
             </li>

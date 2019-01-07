@@ -196,15 +196,27 @@ input:checked + .slider:before {
                 <p>Here is your recent activities. you can also clear this log as well as disable this feature from security settings.</p><br>
                 <div class="row">
                     <div class="col-md-12">
-                        <table id="example" class="display" style="width:100%">
+                        <table id="table-activities" class="display table" style="width:100%">
                         <thead>
                             <tr>
                                 <th>DATE</th>
+                                <th>DESCRIPTION</th>
                                 <th>DEVICE</th>
                                 <th>BROWSER</th>
                                 <th>IP</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            @foreach($activities as $activity)
+                            <tr>
+                                <td>{{$activity->created_at}}</td>
+                                <td>{{$activity->description}}</td>
+                                <td>{{$activity->getExtraProperty('device')}}</td>
+                                <td>{{$activity->getExtraProperty('browser')}}</td>
+                                <td>{{$activity->getExtraProperty('ip_addr')}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
                         </table>
                     </div>
                 </div>
@@ -219,5 +231,8 @@ input:checked + .slider:before {
 @endsection
 
 @section('script')
-
+<script src="{{ asset('bower_componens/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script>
+    $('#table-activities').DataTable();
+</script>
 @endsection

@@ -85,5 +85,15 @@ Route::middleware(['auth','role:administrator'])->prefix('administrator')->group
     // site config
     Route::get('/site-config', 'AdministratorController@configIndex')->name('admin.config.index');
     Route::post('/site-config/save-edit-config', 'AdministratorController@updateConfigValue')->name('admin.config.update');
-});
 
+    // manage menu
+    Route::get('/manage-menu', 'AdministratorController@manageMenu')->name('admin.managemenu');
+    Route::get('/manage-menu/show/{id}', 'AdministratorController@manageMenuShow')->name('admin.managemenu.show');
+    Route::post('/manage-menu/update-menu/{id}', 'AdministratorController@updateMenu')->name('admin.managemenu.update');
+    Route::get('/manage-menu/create-submenu/{parent_id}', 'AdministratorController@createSubMenu')->name('admin.managemenu.addsubmenu');
+    Route::get('/manage-menu/create', 'AdministratorController@createMenu')->name('admin.managemenu.addmenu');
+    Route::delete('/manage-menu/destroy-submenu/{parent_id}/{submenu_id}', 'AdministratorController@destroySubMenu')->name('admin.managemenu.destroysubmenu');
+    Route::delete('/manage-menu/destroy-menu/{id}', 'AdministratorController@destroyMenu')->name('admin.managemenu.destroymenu');
+    Route::post('/manage-menu/store-submenu/{parent_id}', 'AdministratorController@storeSubMenu')->name('admin.managemenu.storesubmenu');
+    Route::post('/manage-menu/store-menu', 'AdministratorController@storeMenu')->name('admin.managemenu.storemenu');
+});

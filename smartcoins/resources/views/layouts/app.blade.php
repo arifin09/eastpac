@@ -26,6 +26,19 @@
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style>
+        .no-js #loader { display: none;  }
+        .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url({{asset('landingpage/assets/images/loading.gif')}}) center no-repeat #fff;
+        }
+    </style>
 
     @yield('css')
 </head>
@@ -34,6 +47,7 @@
 
 
 <body class="hold-transition skin-black fixed">
+    <div class="se-pre-con"></div>
     <div class="wrapper">
 
         @include('layouts.pages.page-header')
@@ -76,6 +90,12 @@
     <script src="{{asset('bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 
+    <script>
+        $(window).ready(function() {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");
+        });
+    </script>
     @yield('script')
 </body>
 </html>

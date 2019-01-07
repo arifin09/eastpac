@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Spatie\Activitylog\Models\Activity;
+use Auth;
+use Browser;
+use App\User;
 
 class SecurityController extends Controller
 {
@@ -13,8 +17,11 @@ class SecurityController extends Controller
      */
     public function index()
     {
+        // dd(Browser::browserName());
+        $activities = Activity::where('causer_id', Auth::user()->id)->get();
+
         $title = 'Security';
-        return view('layouts.sections.security', compact('title'));
+        return view('layouts.sections.security', compact('title', 'activities'));
     }
 
     /**

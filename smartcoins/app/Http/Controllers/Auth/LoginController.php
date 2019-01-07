@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\User;
+use Auth;
+use Browser;
 
 class LoginController extends Controller
 {
+
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -53,6 +57,22 @@ class LoginController extends Controller
             $field => $request->get($this->username()),
             'password' => $request->get('password'),
         ];
+
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        activity('login')
+        ->causedBy(Auth::user())
+        ->performedOn(new User)
+        ->withProperties(
+            [
+                'device' => Browser::platformName(),
+                'browser' => Browser::browserFamily(),
+                'ip_addr' => request()->ip()
+
+            ])
+        ->log('Login');
     }
 
     /**
@@ -84,5 +104,25 @@ class LoginController extends Controller
             $this->username() => "required|exists:users,{$field}",
             'password' => 'required',
         ], $messages);
+    }
+
+    public function logout(Request $request)
+    {
+        activity('logout')
+        ->causedBy(Auth::user())
+        ->performedOn(Auth::user())
+        ->withProperties(
+            [
+                'device' => Browser::platformName(),
+                'browser' => Browser::browserFamily(),
+                'ip_addr' => request()->ip()
+            ])
+        ->log('Logout');
+
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return $this->loggedOut($request) ?: redirect('/');
     }
 }

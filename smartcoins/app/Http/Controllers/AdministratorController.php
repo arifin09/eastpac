@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\SiteConfig;
+use App\Menu;
 use Validator;
 
 use Spatie\Permission\Models\Permission;
@@ -27,6 +28,13 @@ class AdministratorController extends Controller
         $title = "Detail user";
         $user = User::find($id);
         return view('admin.manageuser.show', compact('title','user'));
+    }
+
+    public function manageMenu()
+    {
+        $title = "Manage Menu";
+        $menus = Menu::whereNull('parent')->paginate(10);
+        return view('admin.managemenu.index', compact('title','menus'));
     }
 
     // user role
@@ -218,6 +226,105 @@ class AdministratorController extends Controller
 
         return response()->json($result);
 
+    }
+
+    public function manageMenuShow($id)
+    {
+        $menu = Menu::find($id);
+        $title = "Detail Menu";
+        return view('admin.managemenu.show', compact('menu', 'title'));
+    }
+
+    public function updateMenu($id, Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'text' => 'required',
+            'active_menu' => 'required',
+            'link' => 'required'
+        ]);
+
+        if($validator->fails()) {
+            return redirect()->back()->withErorrs($validator);
+        } else {
+            Menu::find($id)->update([
+                'text' => $request->text,
+                'active_menu' => $request->active_menu,
+                'link' => $request->link
+            ]);
+
+            return redirect()->back()->with('msg', 'Update success');
+        }
+
+    }
+
+    public function createSubMenu($parent_id)
+    {
+        $title = "Add Sub Menu";
+        $menu = Menu::find($parent_id);
+        return view('admin.managemenu.create_submenu', compact('title','menu'));
+    }
+
+    public function storeSubMenu($parent_id, Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'text' => 'required',
+            'active_menu' => 'required',
+            'link' => 'required'
+        ]);
+
+        if($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        } else {
+            Menu::create([
+                'text' => $request->text,
+                'active' => $request->active_menu,
+                'link' => $request->link,
+                'level' => 2,
+                'parent' => $parent_id
+            ]);
+            return redirect()->route('admin.managemenu.show', $parent_id)->with('msg', 'Success Add');
+        }
+
+    }
+
+    public function createMenu()
+    {
+        $title = "Add new menu";
+        return view('admin.managemenu.create', compact('title'));
+    }
+
+    public function storeMenu(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'text' => 'required',
+            'active_menu' => 'required',
+            'link' => 'required'
+        ]);
+
+        if($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        } else {
+            Menu::create([
+                'text' => $request->text,
+                'active' => $request->active_menu,
+                'link' => $request->link,
+                'level' => 1
+            ]);
+
+            return redirect()->route('admin.managemenu')->with('msg', 'Success Add new menu');
+        }
+    }
+
+    public function destroySubMenu($parent_id, $submenu_id, Request $request)
+    {
+        Menu::find($submenu_id)->delete();
+        return redirect()->route('admin.managemenu.show', $parent_id)->with('msg', 'success remove sub menu');
+    }
+
+    public function destroyMenu($id, Request $request)
+    {
+        Menu::find($id)->delete();
+        return redirect()->back()->with('msg', 'success remove menu');
     }
 
     protected function getConfigValue($key)

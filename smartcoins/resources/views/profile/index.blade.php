@@ -32,13 +32,13 @@
         <div class="row">
             <div class="col-sm-3">
                 <img src="{{asset('dist/img/bio-bg.png')}}" class="user-bg">
-                
+
                 @if(Auth::user()->getMedia('avatars')->last() != false)
                     <img src="{{ Auth::user()->getMedia('avatars')->last()->getFullUrl() }}" class="user-icon">
                 @else
                     <img src="{{ asset('dist/img/user.png') }}" class="user-icon">
                 @endif
-                                
+
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-6">
@@ -95,13 +95,13 @@
                         <div class="form-group password-input"  style="display:none" >
                             <label for="password_old" class="col-sm-3">Old Password</label>
                             <div class="col-sm-8 input-group input-group-sm">
-                                <input type="text" class="form-control" id="password_old" placeholder="">
+                                <input type="password" class="form-control" id="password_old" placeholder="">
                             </div>
                         </div>
                         <div class="form-group password-input"  style="display:none">
                             <label for="password_now" class="col-sm-3">New Password</label>
                             <div class="col-sm-8 input-group input-group-sm">
-                                <input type="text" class="form-control" id="password_now" placeholder="">
+                                <input type="password" class="form-control" id="password_now" placeholder="">
                             </div>
                         </div>
                         <div class="form-group password-input"  style="display:none">
@@ -129,7 +129,7 @@
                                 </span>
                                 </form>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </div>
