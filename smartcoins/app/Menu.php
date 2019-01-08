@@ -8,13 +8,12 @@ class Menu extends Model
 {
 
     public $fillable = [
-        'parent',
-        'text',
-        'link',
-        'icon',
-        'class',
-        'attr',
-        'level',
+        'menu_name',
+        'menu_link',
+        'menu_text',
+        'menu_icon',
+        'menu_class',
+        'menu_attr',
         'active',
         'role',
         'permission',

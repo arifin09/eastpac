@@ -82,7 +82,8 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class=""><a href="{{ route('admin.usermanage') }}"><i class="fa fa-circle-o"></i> Menu</a></li>
-                    <li class=""><a href="{{ route('admin.usermanage') }}"><i class="fa fa-circle-o"></i> Manage User</a></li>
+                    <li class=""><a href="{{ route('admin.usermanage') }}"><i class="fa fa-circle-o"></i> Manage User</a>
+                    </li>
                 </ul>
             </li>
             <li class="{{ (Route::currentRouteName() == "admin.config.index") ? 'active' : '' }}"><a href="{{route('admin.config.index')}}"><i class="fa fa-gears"></i> <span>Site Config</span></a></li>

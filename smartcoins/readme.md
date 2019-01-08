@@ -40,7 +40,6 @@ php artisan db:seed
 
 ## 6. run 
 ```bash
-php artisan storage:link
 php artisan serve
 ```
 ```http://localhost:8000```

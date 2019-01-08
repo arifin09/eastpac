@@ -62,24 +62,6 @@ class SiteConfigsTableSeeder extends Seeder
                 'created_at' => '2018-12-27 00:00:00',
                 'updated_at' => '2018-12-27 04:41:04',
             ),
-            5 =>
-            array (
-                'id' => 6,
-                'key' => 'TOTAL_DSHARE_TARGET',
-                'value' => '0',
-                'type' => 'int',
-                'created_at' => '2018-12-27 00:00:00',
-                'updated_at' => '2018-12-27 04:41:04',
-            ),
-            6 =>
-            array (
-                'id' => 7,
-                'key' => 'TOTAL_DSHARE_SOLD',
-                'value' => '0',
-                'type' => 'int',
-                'created_at' => '2018-12-27 00:00:00',
-                'updated_at' => '2018-12-27 04:41:04',
-            ),
         ));
 
 

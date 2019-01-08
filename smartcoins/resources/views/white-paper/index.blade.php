@@ -14,42 +14,50 @@
         </ol>
     </section>
 
+
+
     <!-- Main content -->
     <section class="content">
         <div class="row">
             <div class="col-md-12">
+            	<br>
+            	<a type="button" class="btn btn-info" href="{{ route('whitePaper.create') }}">Create</a>
+            	<br>
+            	<br>
                 <div class="box box-warning">
                     <div class="box-header with-border">
-                    <h3 class="box-title">Users</h3>
+                    <h3 class="box-title">File</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                     <table class="table table-bordered">
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th>Name</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Verified</th>
-                            <th style="width: 100px">Action</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Version</th>
+                            <th style="width: 190px">Action</th>
                         </tr>
                         @php
                             $no = 1;
                         @endphp
-                        @foreach($users as $user)
+                        @foreach($white_papers as $white_paper)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->username }}</td>
-                            <td>{{ $user->email }}</td>
-                            <th>
-                                @if(is_null($user->email_verified_at))
-                                    <i class="fa fa-ban" style="color:red"></i>
-                                @else
-                                    <i class="fa fa-check" style="color:green"></i>
-                                @endif
-                            </th>
-                        </tr>
+                            <td>{{ $white_paper->title }}</td>
+                            <td>{{ $white_paper->description }}</td>
+                            <td>{{ $white_paper->version }}</td>
+                            <td>
+                                <center>
+                                    <a class="btn btn-sm btn-primary" href="{{$white_paper->getMedia('files')->last()->getFullUrl()}}" target="_blank"><i class="fa fa-download"></i></a>
+                                    <a class="btn btn-sm btn-success" href="{{ route('whitePaper.edit',$white_paper->id) }}"><i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-sm btn-danger" href="{{ route('WhitePaper.delete',$white_paper->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a>
+                                    {{--
+                                    <a class="btn btn-sm btn-warning" href=""><i class="fa fa-check"></i></a>
+                                    --}}
+                                    <input type="checkbox" class="form-controll" name="">
+                                </center>
+                            </td>
                         @endforeach
                     </table>
                     </div>
@@ -62,17 +70,22 @@
                         <li><a href="#">3</a></li>
                         <li><a href="#">&raquo;</a></li>
                     </ul> --}}
-                    {{ $users->links() }}
+                    {{ $white_papers->links() }}
                     </div>
                 </div>
                 </div>
             </div>
         </div>
+
+
         <!-- /.box -->
 
     </section>
     <!-- /.content -->
     <!-- /.content-wrapper -->
+
+
+
 @endsection
 
 @section('script')

@@ -8,20 +8,13 @@
 	<!-- Fav Icon  -->
 	<link rel="shortcut icon" href="{{asset('landingpage/images/favicon.png')}}">
 	<!-- Site Title  -->
-	<title>{{ App\SiteConfig::config('SITE_TITLE') }}</title>
+	<title>{{App\SiteConfig::config('SITE_TITLE')}}</title>
 	<!-- Vendor Bundle CSS -->
-	<link rel="stylesheet" href="{{asset('landingpage/assets/css/vendor.bundle.css?ver=142')}}">
+	<link rel="stylesheet" href="{{asset('landingpage/assets/css/vendor.bundle.css')}}">
 	<!-- Custom styles for this template -->
-	<link rel="stylesheet" href="{{asset('landingpage/assets/css/style.css?ver=142')}}">
-	<link rel="stylesheet" href="{{asset('landingpage/assets/css/theme-orange.css?ver=142')}}">
-    <style>
-        .text-contact {
-            color: #f9464a !important;
-        }
-        .text-section {
-            color: #f9464a !important;
-        }
-    </style>
+	<link rel="stylesheet" href="{{asset('landingpage/assets/css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('landingpage/assets/css/theme-orange.css')}}">
+
 </head>
 
 <body class="theme-dark io-zinnia" data-spy="scroll" data-target="#mainnav" data-offset="80">
@@ -48,11 +41,11 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
                 <ul class="navbar-nav animated remove-animation" data-animate="fadeInDown" data-delay=".75">
                     <li class="nav-item"><a class="nav-link menu-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link menu-link" href="#benifits">Benefits</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="#benifits">Benifits</a></li>
                     <li class="nav-item"><a class="nav-link menu-link" href="#tokenSale">Token Sale</a></li>
                     <li class="nav-item"><a class="nav-link menu-link" href="#roadmap">Roadmap</a></li>
                     <li class="nav-item"><a class="nav-link menu-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link menu-link" href="#faq">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="#faq">Faqs</a></li>
                     <li class="nav-item"><a class="nav-link menu-link" href="#contact">Contact</a></li>
                 </ul>
                 <ul class="navbar-btns animated remove-animation" data-animate="fadeInDown" data-delay=".85">
@@ -83,7 +76,7 @@
 					<div class="row align-items-center text-center justify-content-center">
 						<div class="col-sm-10 col-md-12 col-lg-10">
 							<div class="header-txt tab-center mobile-center">
-								<h1 class="animated" data-animate="fadeInUp" data-delay="1.25">EASTPAC ICO STARTING SOON<br class="d-none d-xl-block"></h1><h3>900,000 TAKENS ALREADY SOLD OUT</h3>
+								<h1 class="animated" data-animate="fadeInUp" data-delay="1.25">EASTPAC ICO ENDING SOON<br class="d-none d-xl-block"></h1><h3>900,000 TAKENS ALREADY SOLD OUT</h3>
 								<div class="gaps size-1x d-none d-md-block"></div>
 								<p class="lead animated" data-animate="fadeInUp" data-delay="1.35">The next offer will start again at 21:30</p>
 								<div class="gaps size-1x d-none d-md-block"></div>
@@ -108,45 +101,23 @@
 		<!-- End Banner/Slider -->
 		<div class="presale-box animated" data-animate="fadeIn" data-delay="1.65">
             <div class="container">
-                <div class="row no-gutters justify-content-center mid-box">
+                <div class="row no-gutters justify-content-center">
                     <div class="col-xl-4 col-md-5">
                         <div class="presale-countdown">
                             <h5>Pre-sale is Live Now</h5>
-							<div class="token-countdown" data-date="2018/12/05">
-								<div id="clockdiv">
-									<div>
-										<span class="days"></span>
-										<div class="smalltext">Days</div>
-									</div>
-									<div>
-										<span class="hours"></span>
-										<div class="smalltext">Hours</div>
-									</div>
-									<div>
-										<span class="minutes"></span>
-										<div class="smalltext">Minutes</div>
-									</div>
-									<div>
-										<span class="seconds"></span>
-										<div class="smalltext">Seconds</div>
-									</div>
-								</div></div>
+                            <h6>Pre-Sale ends in</h6>
+                            <div class="token-countdown" data-date="2018/12/05"></div>
                         </div>
                     </div><!-- .col  -->
                     <div class="col-xl-6 col-md-7">
                         <div class="presale-status">
                             <h5>Pre Sale</h5>
                             <div class="presale-bar">
-                                {{-- <div class="presale-bar-percent" style="width:35%"></div> --}}
-                                {{-- 50000/200000*100 --}}
-                                <div class="presale-bar-percent"
-                                    style="width:{{ $dshare_persentase_progress_bar }}%;color:#444;">
-                                </div>
+                                <div class="presale-bar-percent" style="width:35%"></div>
                             </div>
                             <div class="presale-points d-flex justify-content-between">
-                                <span>{{ number_format($dshare_sold) }} EAST ({{ $dshare_persentase_progress_bar }}%)
-                                </span>
-                                <span>{{ number_format($dshare_target) }} EAST (100%)</span>
+                                <span>15k Sold</span>
+                                <span>75k Sold</span>
                             </div>
                         </div>
                     </div><!-- .col  -->
@@ -495,24 +466,20 @@
                             <a href="#" class="btn btn-outline btn-dropdown" data-toggle="dropdown">White Paper <i class="fas fa-caret-down"></i></a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li><a href="#">English</a></li>
-                                <li><a href="#">Bahasa</a></li>
-                                <li><a href="#">Russian</a></li>
-                                <li><a href="#">Korea</a></li>
+                                <li><a href="#">Dutch</a></li>
+                                <li><a href="#">France</a></li>
                             </ul>
                         </li>
                         <li class="animated" data-animate="fadeInUp" data-delay=".5">
                             <a href="#" class="btn btn-outline btn-dropdown" data-toggle="dropdown">One Pager <i class="fas fa-caret-down"></i></a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li><a href="#">English</a></li>
-                                <li><a href="#">Bahasa</a></li>
-                                <li><a href="#">Russian</a></li>
-                                <li><a href="#">Korea</a></li>
+                                <li><a href="#">Dutch</a></li>
+                                <li><a href="#">France</a></li>
                             </ul>
                         </li>
-<!--
                         <li class="animated" data-animate="fadeInUp" data-delay=".6"><a href="#" class="btn btn-outline">Privacy &amp; Policy</a></li>
                         <li class="animated" data-animate="fadeInUp" data-delay=".7"><a href="#" class="btn btn-outline">Terms of Coin Sale</a></li>
--->
                     </ul>
 	            </div><!-- .col -->
 	        </div><!-- .row -->
@@ -732,296 +699,568 @@
     <!-- End Section -->
 
     <!-- Team Section -->
-	<!-- Team Section -->
 	<div class="section section-pad section-bg" id="team">
-            <div class="ui-shape ui-shape-s5"></div>
-            <div class="container">
-                <div class="row justify-content-center text-center">
-                    <div class="col-xl-6 col-lg-8">
-                        <div class="section-head-s7">
-                            <h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Executive team</h2>
-                            <p class="animated" data-animate="fadeInUp" data-delay=".2">The EASTPAC Team combines a passion for esports, industry experise &amp; proven record in finance, development, marketing & licensing.</p>
+	    <div class="ui-shape ui-shape-s5"></div>
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-xl-6 col-lg-8">
+					<div class="section-head-s7">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Executive team</h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".2">The EASTPAC Team combines a passion for esports, industry experise &amp; proven record in finance, development, marketing & licensing.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center text-center">
+				<div class="col-sm-6 col-lg-3">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".3">
+						<div class="team-photo">
+							<img src="{{asset('landingpage/images/team-a-sq.jpg')}}" alt="" />
+							<a href="#team-profile-1" class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info">
+							<h5 class="team-name">Waylon Dalton</h5>
+							<span class="team-title">CEO &amp; Lead Blockchain </span>
+							<ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div>
+
+						<!-- Start .team-profile  -->
+						<div id="team-profile-1" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo">
+											<img src="{{asset('landingpage/images/team-a-lg.jpg')}}" alt="" />
+										</div>
+									</div><!-- .col  -->
+
+									<div class="col-md-6">
+										<div class="team-profile-info">
+											<h3 class="name">Waylon Dalton</h3>
+											<p class="sub-title">CEO &amp; Lead Blockchain </p>
+											<ul class="tpi-social">
+												<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href=""><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+											<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  -->
+
+								</div><!-- .row  -->
+							</div><!-- .container  -->
+						</div><!-- .team-profile  -->
+
+					</div>
+				</div><!-- .col  -->
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".4">
+						<div class="team-photo">
+							<img src="{{asset('landingpage/images/team-b-sq.jpg')}}" alt="team">
+							<a href="#team-profile-2" class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info">
+							<h5 class="team-name">Stefan Harary</h5>
+							<span class="team-title">CTO &amp; Senior Developer</span>
+							<ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div>
+
+						<!-- Start .team-profile  -->
+						<div id="team-profile-2" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo">
+											<img src="{{asset('landingpage/images/team-b-lg.jpg')}}" alt="team" />
+										</div>
+									</div><!-- .col  -->
+
+									<div class="col-md-6">
+										<div class="team-profile-info">
+											<h3 class="name">Stefan Harary</h3>
+											<p class="sub-title">CTO &amp; Senior Developer</p>
+											<ul class="tpi-social">
+												<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href=""><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+											<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  -->
+
+								</div><!-- .row  -->
+							</div><!-- .container  -->
+						</div><!-- .team-profile  -->
+
+					</div>
+				</div><!-- .col  -->
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".5">
+						<div class="team-photo">
+							<img src="{{asset('landingpage/images/team-c-sq.jpg')}}" alt="team">
+							<a href="#team-profile-3" class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info">
+							<h5 class="team-name">Moises Teare</h5>
+							<span class="team-title">Blochain App Developer</span>
+							<ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div>
+
+						<!-- Start .team-profile  -->
+						<div id="team-profile-3" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo">
+											<img src="{{asset('landingpage/images/team-c-lg.jpg')}}" alt="team" />
+										</div>
+									</div><!-- .col  -->
+
+									<div class="col-md-6">
+										<div class="team-profile-info">
+											<h3 class="name">Moises Teare</h3>
+											<p class="sub-title">Blockhain App Developer</p>
+											<ul class="tpi-social">
+												<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href=""><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+											<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  -->
+
+								</div><!-- .row  -->
+							</div><!-- .container  -->
+						</div><!-- .team-profile  -->
+
+					</div>
+				</div><!-- .col  -->
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".6">
+						<div class="team-photo">
+							<img src="{{asset('landingpage/images/team-d-sq.jpg')}}" alt="team">
+							<a href="#team-profile-4" class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info">
+							<h5 class="team-name">Gabriel Bernal</h5>
+							<span class="team-title">Community Management</span>
+							<ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div>
+
+						<!-- Start .team-profile  -->
+						<div id="team-profile-4" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo">
+											<img src="{{asset('landingpage/images/team-d-lg.jpg')}}" alt="team" />
+										</div>
+									</div><!-- .col  -->
+
+									<div class="col-md-6">
+										<div class="team-profile-info">
+											<h3 class="name">Gabriel Bernal</h3>
+											<p class="sub-title">Community Management</p>
+											<ul class="tpi-social">
+												<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href=""><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+											<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  -->
+
+								</div><!-- .row  -->
+							</div><!-- .container  -->
+						</div><!-- .team-profile  -->
+
+					</div>
+				</div><!-- .col  -->
+			</div><!-- .row  -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="gaps size-2x"></div>
+					<h3 class="sub-heading ucap animated" data-animate="fadeInUp" data-delay=".7">Advisors</h3>
+					<div class="gaps size-2x"></div>
+				</div>
+			</div>
+			<div class="row justify-content-center text-center">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-circle animated" data-animate="fadeInUp" data-delay=".8">
+                        <div class="team-photo">
+                            <img src="{{asset('landingpage/images/team-e-sq.jpg')}}" alt="team">
+                            <a href="#team-profile-5" class="expand-trigger content-popup"></a>
                         </div>
+                        <div class="team-info">
+                            <h5 class="team-name">Dylan Finch</h5>
+                            <span class="team-title">Board Advisor</span>
+                            <ul class="team-social">
+                                <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+                                <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+                                <li><a href=""><em class="fab fa-twitter"></em></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Start .team-profile  -->
+                        <div id="team-profile-5" class="team-profile mfp-hide">
+                            <button title="Close" type="button" class="mfp-close">×</button>
+                            <div class="container-fluid">
+                                <div class="row no-mg">
+                                    <div class="col-md-6">
+                                        <div class="team-profile-photo">
+                                            <img src="{{asset('landingpage/images/team-e-lg.jpg')}}" alt="team" />
+                                        </div>
+                                    </div><!-- .col  -->
+
+                                    <div class="col-md-6">
+                                        <div class="team-profile-info">
+                                            <h3 class="name">Dylan Finch</h3>
+                                            <p class="sub-title">Board Advisor</p>
+                                            <ul class="tpi-social">
+                                                <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+                                                <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+                                                <li><a href=""><em class="fab fa-twitter"></em></a></li>
+                                            </ul>
+                                            <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+                                            <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+                                            <div class="skill-bars">
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col  -->
+
+                                </div><!-- .row  -->
+                            </div><!-- .container  -->
+                        </div><!-- .team-profile  -->
+
                     </div>
-                </div>
-                <div class="row justify-content-center text-center">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="team-circle animated" data-animate="fadeInUp" data-delay=".3">
-                            <div class="team-photo">
-                                <img src="{{asset('landingpage/images/team-walter.jpg')}}" alt="" />
-                                <a href="#team-profile-1" class="expand-trigger content-popup"></a>
-                            </div>
-                            <div class="team-info">
-                                <h5 class="team-name">Walter Kaminski</h5>
-                                <span class="team-title">CEO</span>
-                                <ul class="team-social">
-                                    <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
-                                    <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
-                                    <li><a href=""><em class="fab fa-twitter"></em></a></li>
-                                </ul>
-                            </div>
+                </div><!-- .col  -->
 
-                            <!-- Start .team-profile  -->
-                            <div id="team-profile-1" class="team-profile mfp-hide">
-                                <button title="Close" type="button" class="mfp-close">×</button>
-                                <div class="container-fluid">
-                                    <div class="row no-mg">
-                                        <div class="col-md-6">
-                                            <div class="team-profile-photo">
-                                                <img src="{{asset('landingpage/images/team-walter.jpg')}}" alt="" />
-                                            </div>
-                                        </div><!-- .col  -->
-
-                                        <div class="col-md-6">
-                                            <div class="team-profile-info">
-                                                <h3 class="name">Walter Kaminski</h3>
-                                                <p class="sub-title">CEO</p>
-                                                <ul class="tpi-social">
-                                                    <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
-                                                    <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
-                                                    <li><a href=""><em class="fab fa-twitter"></em></a></li>
-                                                </ul>
-                                                <p>is a career professional who brings a wealth of experience in Medical & Healthcare, Leisure & Lifestyle including Gaming and Casinos, Commercial Agriculture Mainly Crude Palm Oil, Livestock Breeding and Aqt1aculture. Transport Logistic both Freight and Passengers (Ground and Aviation), Mining and Mineral processing, IT Solutions including Financial Technology,Block-chain and Crypto tokens, Telecom munication and Media, Capital Markets. Infrastructure including Toll Roads, Airports and Power Generations (Coal Fire Gas Turbine and Renew-ables) Oil & Gas and Property Development  & Construction.
-                                                </p>
-                                                <p>He has successfully managed, advised and directed public and private companies on debt and equity financing, mergers and acquisitions and corporate restructuring. </p>
-                                            </div>
-                                        </div><!-- .col  -->
-
-                                    </div><!-- .row  -->
-                                </div><!-- .container  -->
-                            </div><!-- .team-profile  -->
-
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-circle animated" data-animate="fadeInUp" data-delay=".9">
+                        <div class="team-photo">
+                            <img src="{{asset('landingpage/images/team-f-sq.jpg')}}" alt="team">
+                            <a href="#team-profile-6" class="expand-trigger content-popup"></a>
                         </div>
-                    </div><!-- .col  -->
-
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="team-circle animated" data-animate="fadeInUp" data-delay=".4">
-                            <div class="team-photo">
-                                <img src="{{asset('landingpage/images/team-iliya.jpeg')}}" alt="team">
-                                <a href="#team-profile-2" class="expand-trigger content-popup"></a>
-                            </div>
-                            <div class="team-info">
-                                <h5 class="team-name">Iliya Bugaev</h5>
-                                <span class="team-title">CTO</span>
-                                <ul class="team-social">
-                                    <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
-                                    <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
-                                    <li><a href=""><em class="fab fa-twitter"></em></a></li>
-                                </ul>
-                            </div>
-
-                            <!-- Start .team-profile  -->
-                            <div id="team-profile-2" class="team-profile mfp-hide">
-                                <button title="Close" type="button" class="mfp-close">×</button>
-                                <div class="container-fluid">
-                                    <div class="row no-mg">
-                                        <div class="col-md-6">
-                                            <div class="team-profile-photo">
-                                                <img src="{{asset('landingpage/images/team-iliya.jpg')}}" alt="team" />
-                                            </div>
-                                        </div><!-- .col  -->
-
-                                        <div class="col-md-6">
-                                            <div class="team-profile-info">
-                                                <h3 class="name">Iliya Bugaev</h3>
-                                                <p class="sub-title">CTO</p>
-                                                <ul class="tpi-social">
-                                                    <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
-                                                    <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
-                                                    <li><a href=""><em class="fab fa-twitter"></em></a></li>
-                                                </ul>
-                                                <p>One of the pioneers and core leaders of blockchain technology and manage the economics/valuation models for various real estate and travel/leisure industries. Drove the blockchain to Rusia Blockchain Association. Versed team development BS, Econimics & Cybernetics, top 5 student nationwide.</p>
-                                                <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
-
-                                            </div>
-                                        </div><!-- .col  -->
-
-                                    </div><!-- .row  -->
-                                </div><!-- .container  -->
-                            </div><!-- .team-profile  -->
-
+                        <div class="team-info">
+                            <h5 class="team-name">Julian Paten</h5>
+                            <span class="team-title">Board Advisor</span>
+                            <ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
                         </div>
-                    </div><!-- .col  -->
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="team-circle animated" data-animate="fadeInUp" data-delay=".5">
-                            <div class="team-photo">
-                                <img src="{{asset('landingpage/images/team-ruslana.jpeg')}}" alt="team">
-                                <a href="#team-profile-3" class="expand-trigger content-popup"></a>
-                            </div>
-                            <div class="team-info">
-                                <h5 class="team-name">Ruslana Golunova</h5>
-                                <span class="team-title">Team</span>
-                                <ul class="team-social">
-                                    <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
-                                    <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
-                                    <li><a href=""><em class="fab fa-twitter"></em></a></li>
-                                </ul>
-                            </div>
+                        <!-- Start .team-profile  -->
+                        <div id="team-profile-6" class="team-profile mfp-hide">
+                            <button title="Close" type="button" class="mfp-close">×</button>
+                            <div class="container-fluid">
+                                <div class="row no-mg">
 
-                            <!-- Start .team-profile  -->
-                            <div id="team-profile-3" class="team-profile mfp-hide">
-                                <button title="Close" type="button" class="mfp-close">×</button>
-                                <div class="container-fluid">
-                                    <div class="row no-mg">
-                                        <div class="col-md-6">
-                                            <div class="team-profile-photo">
-                                                <img src="{{asset('landingpage/images/team-ruslana.jpeg')}}" alt="team" />
+                                    <div class="col-md-6">
+                                        <div class="team-profile-photo">
+                                            <img src="{{asset('landingpage/images/team-f-lg.jpg')}}" alt="team" />
+                                        </div>
+                                    </div><!-- .col  -->
+
+                                    <div class="col-md-6">
+                                        <div class="team-profile-info">
+                                            <h3 class="name">Julian Paten</h3>
+                                            <p class="sub-title">Board Advisor</p>
+                                            <ul class="tpi-social">
+                                                <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+                                                <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+                                                <li><a href=""><em class="fab fa-twitter"></em></a></li>
+                                            </ul>
+                                            <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+                                            <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+                                            <div class="skill-bars">
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div><!-- .col  -->
+                                        </div>
+                                    </div><!-- .col  -->
 
-                                        <div class="col-md-6">
-                                            <div class="team-profile-info">
-                                                <h3 class="name">Ruslana Golunova</h3>
-                                                <p class="sub-title">Team</p>
-                                                <ul class="tpi-social">
-                                                    <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
-                                                    <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
-                                                    <li><a href=""><em class="fab fa-twitter"></em></a></li>
-                                                </ul>
-                                                <p>Seasoned operation management and global product development and service delivery operation and Russia specializing in the field of software application, focus on blockchain. MA, Advance Project Management, Khabarovsk State University, Standford Center for Professional Development.</p>
-
-                                            </div>
-                                        </div><!-- .col  -->
-
-                                    </div><!-- .row  -->
-                                </div><!-- .container  -->
-                            </div><!-- .team-profile  -->
-
-                        </div>
-                    </div><!-- .col  -->
-                </div><!-- .row  -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="gaps size-2x"></div>
-                        <h3 class="sub-heading ucap animated" data-animate="fadeInUp" data-delay=".7">Advisors</h3>
-                        <div class="gaps size-2x"></div>
+                                </div><!-- .row  -->
+                            </div><!-- .container  -->
+                        </div><!-- .team-profile  -->
                     </div>
-                </div>
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="team-circle animated" data-animate="fadeInUp" data-delay=".8">
-                            <div class="team-photo">
-                                <img src="{{asset('landingpage/images/team-alex.jpeg')}}" alt="team">
-                                <a href="#team-profile-5" class="expand-trigger content-popup"></a>
-                            </div>
-                            <div class="team-info">
-                                <h5 class="team-name">Alex Caracao</h5>
-                                <span class="team-title">Board Advisor</span>
-                                <ul class="team-social">
-                                    <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
-                                    <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
-                                    <li><a href=""><em class="fab fa-twitter"></em></a></li>
-                                </ul>
-                            </div>
+                </div><!-- .col  -->
 
-                            <!-- Start .team-profile  -->
-                            <div id="team-profile-5" class="team-profile mfp-hide">
-                                <button title="Close" type="button" class="mfp-close">×</button>
-                                <div class="container-fluid">
-                                    <div class="row no-mg">
-                                        <div class="col-md-6">
-                                            <div class="team-profile-photo">
-                                                <img src="{{asset('landingpage/images/team-alex.jpeg')}}" alt="team" />
-                                            </div>
-                                        </div><!-- .col  -->
-
-                                        <div class="col-md-6">
-                                            <div class="team-profile-info">
-                                                <h3 class="name">Alex Caracao</h3>
-                                                <p class="sub-title">Board Advisor</p>
-                                                <ul class="tpi-social">
-                                                    <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
-                                                    <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
-                                                    <li><a href=""><em class="fab fa-twitter"></em></a></li>
-                                                </ul>
-                                                <p>Highly passionate, strategical-focused professional, who has acquired extensive domestic and international knowledge by actively working in Australia and China. With over thirty-eight years of experience in the Real Estate Industry, and a proven track record of success, I have positively contributed to the commercial strategies of multi-national organisations while also establishing and driving the success of my own real estate agencies and that of others nationally. </p>
-                                                <p>As an energetic, motivational leader, I am able to lead and empower a high-performing team while driving the development and execution of Sale Strategies to propel performance, profitability and return on investments. Additionally, I can provide advice, expertise, and support in the following area's</p>
-
-                                                <ul>Skills:
-                                                     <li>-Strategic and Operational Planning</li>
-                                                     <li>-ASX Managing Director & CEO -2010-2011 & 2017-2018</li>
-                                                     <li>-Sale of Mining Resource Mandate</li>
-                                                     <li>-Property Management</li>
-                                                     <li>-Commercial Real Estate</li>
-                                                     <li>-Residential Real Estate</li>
-                                                     <li>-International Real Estate</li>
-                                                     <li>-Project Management</li>
-                                                     <li>-Concrete Construction </li>
-                                                     <li>-Land Subdivision </li>
-                                                     <li>-Site Amalgamation </li>
-                                                     <li>-Real Estate Economics </li>
-                                                     <li>-Business Analysis </li>
-                                                     <li>-Contract Management</li>
-                                                     <li>-Buyer Representation</li>
-                                                     <li>-Sales Management</li>
-                                                     <li>-Executive Leadership</li>
-                                                     <li>-Franchising</li>
-                                                </ul>
-
-
-                                            </div>
-                                        </div><!-- .col  -->
-
-                                    </div><!-- .row  -->
-                                </div><!-- .container  -->
-                            </div><!-- .team-profile  -->
-
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-circle animated" data-animate="fadeInUp" data-delay="1">
+                        <div class="team-photo">
+                            <img src="{{asset('landingpage/images/team-g-sq.jpg')}}" alt="team">
+                            <a href="#team-profile-7" class="expand-trigger content-popup"></a>
                         </div>
-                    </div><!-- .col  -->
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="team-circle animated" data-animate="fadeInUp" data-delay=".9">
-                            <div class="team-photo">
-                                <img src="{{asset('landingpage/images/team-yamaji.jpeg')}}" alt="team">
-                                <a href="#team-profile-6" class="expand-trigger content-popup"></a>
-                            </div>
-                            <div class="team-info">
-                                <h5 class="team-name">Steven Yamaji</h5>
-                                <span class="team-title">Board Advisor</span>
-                                <ul class="team-social">
-                                    <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
-                                    <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
-                                    <li><a href=""><em class="fab fa-twitter"></em></a></li>
-                                </ul>
-                            </div>
-
-                            <!-- Start .team-profile  -->
-                            <div id="team-profile-6" class="team-profile mfp-hide">
-                                <button title="Close" type="button" class="mfp-close">×</button>
-                                <div class="container-fluid">
-                                    <div class="row no-mg">
-
-                                        <div class="col-md-6">
-                                            <div class="team-profile-photo">
-                                                <img src="{{asset('landingpage/images/team-yamaji.jpeg')}}" alt="team" />
-                                            </div>
-                                        </div><!-- .col  -->
-
-                                        <div class="col-md-6">
-                                            <div class="team-profile-info">
-                                                <h3 class="name">Steven Yamaji</h3>
-                                                <p class="sub-title">Board Advisor</p>
-                                                <ul class="tpi-social">
-                                                    <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
-                                                    <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
-                                                    <li><a href=""><em class="fab fa-twitter"></em></a></li>
-                                                </ul>
-                                                <p>Enterpreneur and market marker 0f +25 years with +10 countries bussiness leadership experiences. Industry focus on blockchain, software, apps, internet, telecom, and PBO. Successfully executed a number of global partnership and M&A transaction. </p>
-                                                <p>MBA, Standford University, Graduate School of Bussiness, Palo Alto, California, USA BA, International Studies, Sophia University, Tokyo, Japan </p>
-                                            </div>
-                                        </div><!-- .col  -->
-
-                                    </div><!-- .row  -->
-                                </div><!-- .container  -->
-                            </div><!-- .team-profile  -->
+                        <div class="team-info">
+                            <h5 class="team-name">Jaxon Kilburn</h5>
+                            <span class="team-title">Board Advisor</span>
+                            <ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
                         </div>
-                    </div><!-- .col  -->
 
+                        <!-- Start .team-profile  -->
+                        <div id="team-profile-7" class="team-profile mfp-hide">
+                            <button title="Close" type="button" class="mfp-close">×</button>
+                            <div class="container-fluid">
+                                <div class="row no-mg">
 
-                </div><!-- .row  -->
-            </div>
+                                    <div class="col-md-6">
+                                        <div class="team-profile-photo">
+                                            <img src="{{asset('landingpage/images/team-g-lg.jpg')}}" alt="team" />
+                                        </div>
+                                    </div><!-- .col  -->
+
+                                    <div class="col-md-6">
+                                        <div class="team-profile-info">
+                                            <h3 class="name">Jaxon Kilburn</h3>
+                                            <p class="sub-title">Board Advisor</p>
+                                            <ul class="tpi-social">
+                                                <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+                                                <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+                                                <li><a href=""><em class="fab fa-twitter"></em></a></li>
+                                            </ul>
+                                            <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+                                            <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+                                            <div class="skill-bars">
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col  -->
+
+                                </div><!-- .row  -->
+                            </div><!-- .container  -->
+                        </div><!-- .team-profile  -->
+
+                    </div>
+                </div><!-- .col  -->
+			</div><!-- .row  -->
         </div>
+    </div>
 	<!-- Section Products -->
 	<div class="section section-pad section-bg-zinnia" id="partners">
 		<div class="container">
@@ -1094,8 +1333,8 @@
 			<div class="row justify-content-center text-center">
 				<div class="col-md-7">
 					<div class="section-head-s7">
-						<h2 class="section-title-s7 animated text-section" data-animate="fadeInUp" data-delay=".1">Frequently asked questions</h2>
-						<p class="animated text-section" data-animate="fadeInUp" data-delay=".2">Below we’ve provided a bit of EASTCOIN, EAST Token, cryptocurrencies, and few others. If you have any other questions, please get in touch using the contact form below.</p>
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Frequently asked questions</h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".2">Below we’ve provided a bit of EASTCOIN, EAST Token, cryptocurrencies, and few others. If you have any other questions, please get in touch using the contact form below.</p>
 					</div>
 				</div>
 			</div>
@@ -1313,26 +1552,23 @@
 			<div class="row text-center">
 				<div class="col">
 					<div class="section-head-s7">
-						<h2 class="section-title-s7 animated text-contact" data-animate="fadeInUp" data-delay=".1">Contact EASTERN PASIFIC</h2>
-						<p class="animated text-contact" data-animate="fadeInUp" data-delay=".2">Any question? Reach out to us and we’ll get back to you shortly.</p>
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Contact EASTERN PASIFIC</h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".2">Any question? Reach out to us and we’ll get back to you shortly.</p>
 					</div>
 				</div><!-- .col -->
 			</div><!-- .row -->
 			<div class="row justify-content-center">
 				<div class="col-lg-8">
-					<ul class="contact-info" style="
-                            font-size: .7em;
-                            font-weight: 500;
-                        ">
-						<li class="animated" data-animate="fadeInUp" data-delay=".3"><em class="fa fa-phone"></em><span>{{ App\SiteConfig::config('CONTACT_PHONE_NUMBER') }}</span></li>
-						<li class="animated" data-animate="fadeInUp" data-delay=".4"><em class="fa fa-envelope"></em><span> {{ App\SiteConfig::config('CONTACT_EMAIL') }}</span></li>
-						<li class="animated" data-animate="fadeInUp" data-delay=".5"><em class="fa fa-building"></em><span>{{ App\SiteConfig::config('CONTACT_ADDRESS') }}</span></li>
+					<ul class="contact-info">
+						<li class="animated" data-animate="fadeInUp" data-delay=".3"><em class="fa fa-phone"></em><span>{{App\SiteConfig::config('CONTACT_PHONE_NUMBER')}}</span></li>
+						<li class="animated" data-animate="fadeInUp" data-delay=".4"><em class="fa fa-envelope"></em><span> {{App\SiteConfig::config('CONTACT_EMAIL')}}</span></li>
+						<li class="animated" data-animate="fadeInUp" data-delay=".5"><em class="fa fa-building"></em><span>{{App\SiteConfig::config('CONTACT_ADDRESS')}}</span></li>
 					</ul>
 				</div><!-- .col -->
 			</div><!-- .row -->
 			<div class="row justify-content-center">
 				<div class="col-lg-8">
-					<form id="contact-form" class="form-message text-center show-error-hint" action="form/contact.php" method="post">
+					<form id="contact-form" class="form-message text-center show-error-hint" action="#" method="post">
 						<div class="form-results"></div>
 						<div class="input-field animated" data-animate="fadeInUp" data-delay=".6">
 							<input name="contact-name" type="text" class="input-line required">
@@ -1370,7 +1606,7 @@
 	                    <ul class="widget-links">
 	                        <li><a href="#">Watch Demo</a></li>
 	                        <li><a href="#">Whitepaper</a></li>
-	                        <li><a href="#">Integration &amp; API</a></li>
+	                        <li><a href="#">Intigration &amp; API</a></li>
 	                        <li><a href="#">Privacy &amp; policy</a></li>
 	                    </ul>
 	                </div>
@@ -1380,10 +1616,10 @@
 	                    <h5 class="widget-title">Company</h5>
 	                    <ul class="widget-links">
 	                        <li><a href="#">Home</a></li>
-	                        <li><a href="#about">About</a></li>
+	                        <li><a href="#">About</a></li>
 	                        <li><a href="#">Blog</a></li>
-	                        <li><a href="#faq">FAQ</a></li>
-	                        <li><a href="#contact">Contact Us</a></li>
+	                        <li><a href="#">FAQ</a></li>
+	                        <li><a href="#">Contact Us</a></li>
 	                    </ul>
 	                </div>
 	            </div><!-- .col -->
@@ -1417,7 +1653,7 @@
 	    </div><!-- .container -->
 	</div>
 	<!-- End Section -->
-    </div>
+
 
 	<!-- Preloader !remove please if you do not want -->
 	<div id="preloader">
@@ -1428,43 +1664,6 @@
 	<!-- Preloader End -->
 
 	<!-- JavaScript (include all script here) -->
-	<script>
-		function getTimeRemaining(endtime) {
-			var t = Date.parse(endtime) - Date.parse(new Date());
-			var seconds = Math.floor((t / 1000) % 60);
-			var minutes = Math.floor((t / 1000 / 60) % 60);
-			var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-			var days = Math.floor(t / (1000 * 60 * 60 * 24));
-			return {
-				'total': t,
-				'days': days,
-				'hours': hours,
-				'minutes': minutes,
-				'seconds': seconds
-			};
-		}
-		function initializeClock(id, endtime) {
-			var clock = document.getElementById(id);
-			var daysSpan = clock.querySelector('.days');
-			var hoursSpan = clock.querySelector('.hours');
-			var minutesSpan = clock.querySelector('.minutes');
-			var secondsSpan = clock.querySelector('.seconds');
-			function updateClock() {
-				var t = getTimeRemaining(endtime);
-				daysSpan.innerHTML = t.days;
-				hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-				minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-				secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-				if (t.total <= 0) {
-					clearInterval(timeinterval);
-				}
-			}
-			updateClock();
-			var timeinterval = setInterval(updateClock, 1000);
-		}
-		var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-		initializeClock('clockdiv', deadline);
-	</script>
 	<script src="{{asset('landingpage/assets/js/jquery.bundle.js?ver=142')}}"></script>
 	<script src="{{asset('landingpage/assets/js/script.js?ver=142')}}"></script>
 

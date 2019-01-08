@@ -4,61 +4,6 @@ Preset   :	Orange
 Version	 :	1.4.3
 Updated	 :	10.26.2018
 */
-
-.presale-status{height: 235px;}
-.presale-countdown{height: 235px;}
-.presale-status{padding-top: 60px;}
-
-
-
-#clockdiv{
-	font-family: sans-serif;
-	color: #fff;
-	display: inline-block;
-	font-weight: 100;
-	text-align: center;
-	font-size: 12px;
-}
-
-#clockdiv > div{
-  padding: 12px;
-  padding-bottom: 5;
-	border-radius: 3px;
-	background: #fe4350;
-	display: inline-block;
-}
-
-#clockdiv div > span{
-  padding: 15px;
-	border-radius: 3px;
-	background: #8c282f;
-	display: inline-block;
-}
-
-.smalltext{
-	padding-top: 5px;
-	font-size: 11px;
-}
-@media (min-width: 150px) and (max-width:767px){
-  .mid-box{
-    position: relative; top: 136px;
-  }
-}
-
-@media (min-width:768px){
-  .mid-box{
-    position: relative; top:40px;
-  }
-}
-
-@media (min-width:768px) and (max-width: 991px){
-  #clockdiv > div{
-    padding: 3px;
-  }
-}
-
-.token-countdown{ text-align: center}
-
 h1.color-secondary, h2.color-secondary, h3.color-secondary, h4.color-secondary, h5.color-secondary, h6.color-secondary, .h1.color-secondary, .h2.color-secondary, .h3.color-secondary, .h4.color-secondary, .h5.color-secondary, .h6.color-secondary { color: #f3618e; }
 h1.color-primary, h2.color-primary, h3.color-primary, h4.color-primary, h5.color-primary, h6.color-primary, .h1.color-primary, .h2.color-primary, .h3.color-primary, .h4.color-primary, .h5.color-primary, .h6.color-primary { color: #ffa93d; }
 

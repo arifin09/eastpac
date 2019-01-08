@@ -20,7 +20,7 @@
                 <div id="msg" class="alert text-center" style="display:none">
                     <strong></strong>
                 </div>
-                <div class="box box-warning">
+                <div class="box box-primary">
                     <div class="box-header with-border">
 
                         <h3 class="box-title">Edit Config</h3>
@@ -93,26 +93,6 @@
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-success btn-flat" id="btnok-ethereum-address"><i class="fa fa-check"></i></button>
                                     <button type="button" class="btn btn-danger btn-flat" id="btncancel-ethereum-address"><i class="fa fa-times"></i></button>
-                                </span>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <b>D-share Target (EAST) </b> <a class="pull-right" id="dshare-total-config" onclick="showDShareTotalConfig()">{{ $dshare_target }}</a>
-                            <div class="input-group input-group-sm" id="dshare-total-config-input" style="display:none">
-                                <input type="text" class="form-control" key="total-dshare-target" placeholder="Total D-Share" value="{{ $dshare_target }}">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-success btn-flat" id="btnok-dshare-total-config"><i class="fa fa-check"></i></button>
-                                    <button type="button" class="btn btn-danger btn-flat" id="btncancel-dshare-total-config"><i class="fa fa-times"></i></button>
-                                </span>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <b>D-share Sold (EAST) </b> <a class="pull-right" id="dshare-sold-config" onclick="showDShareSoldConfig()">{{ $dshare_sold }}</a>
-                            <div class="input-group input-group-sm" id="dshare-sold-config-input" style="display:none">
-                                <input type="text" class="form-control" key="total-dshare-sold" placeholder="Total D-Share Target" value="{{ $dshare_sold }}">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-success btn-flat" id="btnok-dshare-sold-config"><i class="fa fa-check"></i></button>
-                                    <button type="button" class="btn btn-danger btn-flat" id="btncancel-dshare-sold-config"><i class="fa fa-times"></i></button>
                                 </span>
                             </div>
                         </li>
@@ -269,62 +249,6 @@
                 })
             });
 
-            $('#btnok-dshare-total-config').click(function() {
-                $.ajax({
-                    url: '/administrator/site-config/save-edit-config',
-                    type: 'post',
-                    data: {
-                        _token: '{{csrf_token()}}',
-                        val: $('#dshare-total-config-input input').val(),
-                        key: $('#dshare-total-config-input input').attr('key')
-                    },
-                    error: function(datas, status, c) {
-                        $('#msg').addClass('alert-danger');
-                        $('#msg').removeClass('alert-success');
-                        $('#msg strong').text(datas.responseJSON.msg);
-                        $('#msg').show();
-                    },
-                    success: function(datas, status,c) {
-                        $('#msg').removeClass('alert-danger');
-                        $('#msg').addClass('alert-success');
-                        $('#msg strong').text(datas.msg);
-                        $('#msg').show();
-                        $('#dshare-total-config').text($('#dshare-total-config-input input').val());
-                        $('#dshare-total-config-input').hide();
-                        $('#dshare-total-config').show();
-
-                    }
-                })
-            });
-
-            $('#btnok-dshare-sold-config').click(function() {
-                $.ajax({
-                    url: '/administrator/site-config/save-edit-config',
-                    type: 'post',
-                    data: {
-                        _token: '{{csrf_token()}}',
-                        val: $('#dshare-sold-config-input input').val(),
-                        key: $('#dshare-sold-config-input input').attr('key')
-                    },
-                    error: function(datas, status, c) {
-                        $('#msg').addClass('alert-danger');
-                        $('#msg').removeClass('alert-success');
-                        $('#msg strong').text(datas.responseJSON.msg);
-                        $('#msg').show();
-                    },
-                    success: function(datas, status,c) {
-                        $('#msg').removeClass('alert-danger');
-                        $('#msg').addClass('alert-success');
-                        $('#msg strong').text(datas.msg);
-                        $('#msg').show();
-                        $('#dshare-sold-config').text($('#dshare-sold-config-input input').val());
-                        $('#dshare-sold-config-input').hide();
-                        $('#dshare-sold-config').show();
-
-                    }
-                })
-            });
-
 
 
 
@@ -391,16 +315,6 @@
             $('#ethereum-address-config').show();
         });
 
-        $('#btncancel-dshare-total-config').click(function(){
-            $('#dshare-total-config-input').hide();
-            $('#dshare-total-config').show();
-        });
-
-        $('#btncancel-dshare-sold-config').click(function(){
-            $('#dshare-sold-config-input').hide();
-            $('#dshare-sold-config').show();
-        });
-
 
         // show onclick label :
 
@@ -438,18 +352,6 @@
             $('#ethereum-address-config').hide();
             $('#ethereum-address-config-input').show();
             $('#ethereum-address-config-input input').focus();
-        }
-
-        function showDShareTotalConfig() {
-            $('#dshare-total-config').hide();
-            $('#dshare-total-config-input').show();
-            $('#dshare-total-config-input input').focus();
-        }
-
-        function showDShareSoldConfig() {
-            $('#dshare-sold-config').hide();
-            $('#dshare-sold-config-input').show();
-            $('#dshare-sold-config-input input').focus();
         }
 
         // function showInputPassword() {
