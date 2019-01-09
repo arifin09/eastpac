@@ -21,7 +21,7 @@ class LandingPageContentsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'key' => 'about_1',
-                'json_data' => '{"about_1":{"title":"EASTCOIN Problem & Solution","content":"At vero eos et accusamus et iusto odio dignissimos ducimus qui blan ditiis praes entium volup tatum deleniti."}}',
+                'json_data' => '{"about_1":{"title":"About Eastpac","content":"EASTPAC is part of EASTERN PACIFIC CAPITAL.PTE.LTD based in Singapore. EASTPAC is present by providing a renewal and reformation of the world of blockchain and cryprocurrency because EASTPAC is not only present solely as a token. but EASTPAC is present as a DIGITAL SHARE (D-SHARE) for all products and platforms that are present in the EASTPAC ecosystem.by having EASTPAC you not only have the benefit of increasing the value of tokens in the market. but you also have the right in the form of digital shares, which means that you are entitled to receive dividends from every profit made by EASTERN PACIFIC CAPITAL.PTE.LTD"}}',
                 'created_at' => '2019-01-07 00:00:00',
                 'updated_at' => '2019-01-09 04:26:23',
             ),
@@ -37,9 +37,9 @@ class LandingPageContentsTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'key' => 'banner_1',
-                'json_data' => '{"banner_1":{"txt":"EASTPAC ICO STARTING SOON"}}',
+                'json_data' => '{"banner_1":{"txt":"Intial Digital Share Offering (IDSO)"}}',
                 'created_at' => '2019-01-09 00:00:00',
-                'updated_at' => '2019-01-09 12:41:21',
+                'updated_at' => '2019-01-08 09:24:33',
             ),
             3 => 
             array (
@@ -53,7 +53,7 @@ class LandingPageContentsTableSeeder extends Seeder
             array (
                 'id' => 5,
                 'key' => 'token_1',
-                'json_data' => '{"token_1":{"txt_1":"21M","txt_2":"Tokens Offered"}}',
+                'json_data' => '{"token_1":{"txt_1":"20M","txt_2":"Tokens Offered"}}',
                 'created_at' => '2019-01-09 00:00:00',
                 'updated_at' => '2019-01-09 06:25:11',
             ),

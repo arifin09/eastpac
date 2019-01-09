@@ -30,7 +30,7 @@ class SiteConfigsTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'key' => 'CONTACT_EMAIL',
-                'value' => 'myemail2@something.com',
+                'value' => 'eastpac@digitex.online',
                 'type' => 'string',
                 'created_at' => '2018-12-27 00:00:00',
                 'updated_at' => '2018-12-27 04:24:40',
@@ -39,7 +39,7 @@ class SiteConfigsTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'key' => 'CONTACT_ADDRESS',
-                'value' => 'Jl Kertanegara No. 65 Jakarta Selatan',
+                'value' => '10 Anson Road<br>#05-01/15 International Plaza<br>Singapore 079903',
                 'type' => 'string',
                 'created_at' => '2018-12-27 00:00:00',
                 'updated_at' => '2018-12-27 04:37:54',
@@ -48,7 +48,7 @@ class SiteConfigsTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'key' => 'CONTACT_PHONE_NUMBER',
-                'value' => '+00 15151515154',
+                'value' => 'DID +65 6521 6815<br>Hotline +65 6653 1218<br>Fax +65 6226 1209',
                 'type' => 'string',
                 'created_at' => '2018-12-27 00:00:00',
                 'updated_at' => '2018-12-27 04:41:04',

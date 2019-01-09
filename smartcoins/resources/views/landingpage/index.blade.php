@@ -1623,9 +1623,9 @@
                             font-size: .7em;
                             font-weight: 500;
                         ">
-						<li class="animated" data-animate="fadeInUp" data-delay=".3"><em class="fa fa-phone"></em><span>{{ App\SiteConfig::config('CONTACT_PHONE_NUMBER') }}</span></li>
-						<li class="animated" data-animate="fadeInUp" data-delay=".4"><em class="fa fa-envelope"></em><span> {{ App\SiteConfig::config('CONTACT_EMAIL') }}</span></li>
-						<li class="animated" data-animate="fadeInUp" data-delay=".5"><em class="fa fa-building"></em><span>{{ App\SiteConfig::config('CONTACT_ADDRESS') }}</span></li>
+						<li class="animated" data-animate="fadeInUp" data-delay=".3"><em class="fa fa-phone"></em><span>{!! App\SiteConfig::config('CONTACT_PHONE_NUMBER') !!}</span></li>
+						<li class="animated" data-animate="fadeInUp" data-delay=".4"><em class="fa fa-envelope"></em><span> {!! App\SiteConfig::config('CONTACT_EMAIL') !!}</span></li>
+						<li class="animated" data-animate="fadeInUp" data-delay=".5"><em class="fa fa-building"></em><span>{!! App\SiteConfig::config('CONTACT_ADDRESS') !!}</span></li>
 					</ul>
 				</div><!-- .col -->
 			</div><!-- .row -->
