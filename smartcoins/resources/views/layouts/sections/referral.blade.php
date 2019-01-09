@@ -16,6 +16,9 @@
 
                 <div class="box-body">
                 <div class="user-panel">
+                    @php
+                        use App\Referral;
+                    @endphp
 
                     <h4>Invite your friends and family and recive free tokens</h4><br>
                     <p><strong>Each member recives a unique referral link to share with friends and family and recive a bonus - 5% of the value of their contribution.</strong></p>
@@ -25,45 +28,29 @@
                     <div class="refferal-info">
                         <span class="refferal-copy-feedback copy-feedback"></span>
                         <i class="fa fa-link"></i>
-                        <input type="text" class="refferal-address" id="ref-link" value="https://demo.themenio.com/ico?ref=7d264f90653733592" readonly>
+                        <form method="post" action="{{route('home.referral.store')}}">
+                        @csrf
+                        <input type="text" class="refferal-address" id="ref-link" value="{{env('APP_URL')}}?ref={{base64_encode(Auth::user()->username.Auth::user()->email)}}" readonly>
                         <button class="refferal-copy copy-clipboard" data-clipboard-target="#ref-link"><i class="fa fa-copy" id="btn-cpy-link-ref"></i></button>
+                        <div class="row" style="margin-top:2%;">
+                            <div class="col-md-5">
+                                <label for="ref-type">Refferal share type</label>
+                                <select class="form-control" id="ref-type" name="ref_type">
+                                    @foreach ($sosmed as $key => $item)
+                                        @if(Referral::where('referral_type', $key)->where('user_id', Auth::user()->id)->count() == 0)
+                                        <option value="{{$key}}">{{$item}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                <div class="form-group">
+                                    <label for="ref-share-link" class="control-label">Refferal Share Link</label>
+                                    <input type="text" class="form-control" id="ref-share-link" name="ref_share_link" placeholder="Refferal Share link">
+                                </div>
+                                <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                            </div>
+                        </div>
+                        </form>
                     </div><!-- .refferal-info --> <!-- @updated on v1.0.1 -->
-                    <div class="gaps-2x"></div>
-                    <ul class="share-links">
-                        <li>Share with : </li>
-                        <li><a href="#"><i class="fa fa-at"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
-<!--                            <li><a href="#"><i class="fa fa-viber"></i></a></li>-->
-                        <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                    </ul><!-- .share-links -->
-                    <div class="gaps-1x"></div>
-                    <h4>Refferal Statistics</h4>
-                    <div class="refferal-statistics">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="refferal-statistics-item">
-                                    <h6>Visit Count</h6>
-                                    <span>420</span>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-4">
-                                <div class="refferal-statistics-item">
-                                    <h6>Signin Count</h6>
-                                    <span>31</span>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-md-4">
-                                <div class="refferal-statistics-item">
-                                    <h6>Total Bonus</h6>
-                                    <span>155</span>
-                                </div>
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .refferal-statistics -->
                 </div>
                 </div>
             </div>
@@ -80,16 +67,31 @@
                 </div>
 
                 <div class="box-body">
-                    <table id="example" class="display" style="width:100%">
+                    <table id="example" class="display table" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Referee</th>
-                            <th>Bought Token</th>
-                            <th>Bonus</th>
-                            <th>Date</th>
-                            <th>Channel</th>
+                            <th>Link Share</th>
+                            <th>Referrer Type</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        @foreach (Referral::where('user_id', Auth::user()->id)->get() as $ref)
+                            <tr>
+                                <td>
+                                    <a href="{{$ref->referral_link}}">{{$ref->referral_link}}</a>
+                                </td>
+                                <td>
+                                    @if($ref->referral_type == 1)
+                                        Facebook
+                                    @elseif($ref->referral_type == 2)
+                                        Twitter
+                                    @endif
+                                </td>
+                                <td>{{$ref->status}}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
                     </table>
                 </div>
             </div>

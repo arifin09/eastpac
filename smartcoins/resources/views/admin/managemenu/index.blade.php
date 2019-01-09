@@ -20,6 +20,8 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
+                <a href="{{ route('admin.managemenu.addmenu') }}" class="btn btn-sm btn-primary">Add New Menu</a>
+                <br><br>
                 <div class="box box-warning">
                     <div class="box-header with-border">
                     <h3 class="box-title">List Menu</h3>

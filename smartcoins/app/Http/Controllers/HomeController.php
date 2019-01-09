@@ -73,7 +73,13 @@ class HomeController extends Controller
     public function referral()
     {
         $title = "Referral";
-        return view('layouts.sections.referral', compact('title'));
+        $sosmed = [
+            '1' => 'facebook',
+            '2' => 'twitter'
+        ];
+
+        // dd(array_key_exists(3,$sosmed));
+        return view('layouts.sections.referral', compact('title', 'sosmed'));
     }
 
     public function kycapp()

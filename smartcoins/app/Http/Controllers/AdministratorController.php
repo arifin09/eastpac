@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\SiteConfig;
+use App\Referral;
 use App\Menu;
 use Validator;
 
@@ -327,6 +328,18 @@ class AdministratorController extends Controller
         return redirect()->back()->with('msg', 'success remove menu');
     }
 
+    public function bountyIndex()
+    {
+
+        $title = "Bounty List";
+
+        $referrals = Referral::paginate(10);
+
+        return view('admin.bounty.index', compact('title','referrals'));
+    }
+
+
+    // protected method
     protected function getConfigValue($key)
     {
         $config_value = SiteConfig::where('key', strtoupper($key))->first()->value;

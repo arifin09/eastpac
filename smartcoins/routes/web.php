@@ -57,6 +57,9 @@ Route::middleware(['auth', 'verified'])->prefix('home')->group(function() {
     Route::get('security','SecurityController@index')->name('home.security');
     Route::get('kycapp-form','KycController@index')->name('home.kycapp.form');
     Route::post('kycapp-form','KycController@store')->name('home.kycapp.store');
+
+    // referral
+    Route::post('/referral/store', 'ReferralController@store')->name('home.referral.store');
 });
 
 // member
@@ -96,4 +99,13 @@ Route::middleware(['auth','role:administrator'])->prefix('administrator')->group
     Route::delete('/manage-menu/destroy-menu/{id}', 'AdministratorController@destroyMenu')->name('admin.managemenu.destroymenu');
     Route::post('/manage-menu/store-submenu/{parent_id}', 'AdministratorController@storeSubMenu')->name('admin.managemenu.storesubmenu');
     Route::post('/manage-menu/store-menu', 'AdministratorController@storeMenu')->name('admin.managemenu.storemenu');
+
+    // bounty
+    Route::get('/bounty', 'AdministratorController@bountyIndex')->name('admin.bounty');
+    Route::post('/bounty/approve', 'AdministratorController@bountyApprove')->name('admin.bounty.approve');
+});
+
+Route::middleware(['auth','role:administrator'])
+    ->prefix('edit-landing-page-content')->group(function() {
+        Route::put('/save', 'LandingPageContentController@update')->name('editcontent.update');
 });
