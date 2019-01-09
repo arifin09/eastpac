@@ -55,7 +55,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class=""><a href="{{ route('whitePaper.index') }}"><i class="fa fa-circle-o"></i> File</a></li>
-                    <li class=""><a href="{{ route('whitePaper.index') }}"><i class="fa fa-circle-o"></i> Images</a></li>
+                    <li class=""><a href="{{ route('images.index') }}"><i class="fa fa-circle-o"></i> Images</a></li>
                     
                         
                 </ul>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Images;
+use Validator;
+use Auth;
 
 class ImageController extends Controller
 {
@@ -13,7 +16,10 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $title = "Images";
+        $images = Images::paginate(5);
+        // dd($images->find(4)->getMedia('images')->first()->getFullUrl());
+        return view ("images.index", compact("title","images"));
     }
 
     /**
@@ -23,7 +29,8 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+
+        return view ("images.create");
     }
 
     /**
@@ -34,7 +41,29 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       // dd($request->image->getClientOriginalName());
+        $validator = Validator::make($request->all(),[
+            'title'         => 'required',
+            'description'   => 'required',
+            'image'        => 'required|mimes:jpeg,bmp,png'
+        ]);
+
+        if($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        } else {
+            $add = new Images;
+            $add->title             = $request->title;
+            $add->description       = $request->description;
+            $add->image             = $request->image->getClientOriginalName();
+            $add->save();
+
+            if (isset($request->image)) {
+                // dd('kakaikuda');
+                $add->addMediaFromRequest("image")->toMediaCollection('images');
+            }
+
+            return redirect()->route('images.index');
+        }
     }
 
     /**
@@ -56,7 +85,8 @@ class ImageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $images = Images::find($id);
+         return view('images.edit',compact('images'));
     }
 
     /**
@@ -68,7 +98,31 @@ class ImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'title'         => 'required',
+            'description'   => 'required',
+            // 'version' => 'required',
+            // 'file' => 'required|mimes:pdf'
+        ]);
+
+        if($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        } else {
+            $edit = Images::find($request->id);
+            $edit->title             = $request->title;
+            $edit->description       = $request->description;
+            if(isset($request->image)) {
+                $edit->image = $request->image->getClientOriginalName();
+            }
+            $edit->update();
+
+            if (isset($request->image)) {
+                // dd('kakaikuda');
+                $edit->addMediaFromRequest("image")->toMediaCollection('images');
+            }
+
+             return redirect()->route('images.index');
+        }
     }
 
     /**
@@ -79,6 +133,7 @@ class ImageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Images::find($id)->delete();
+        return redirect()->back();
     }
 }
