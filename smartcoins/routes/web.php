@@ -57,6 +57,7 @@ Route::middleware(['auth', 'verified'])->prefix('home')->group(function() {
     Route::get('security','SecurityController@index')->name('home.security');
     Route::get('kycapp-form','KycController@index')->name('home.kycapp.form');
     Route::post('kycapp-form','KycController@store')->name('home.kycapp.store');
+    Route::get('d-share', 'HomeController@dshareIndex')->name('home.dshare');
 
     // referral
     Route::post('/referral/store', 'ReferralController@store')->name('home.referral.store');
@@ -69,6 +70,9 @@ Route::middleware(['auth', 'verified'])->prefix('setting')->group(function() {
     Route::post('profile/full-name-save-edit', 'ProfileController@update')->name('profileUpdate');
     Route::post('profile/change-password-save', 'ProfileController@updatePassword')->name('profileUpdatePassword');
     Route::post('profile/upload', 'ProfileController@updateProfile')->name('profileUpload');
+    Route::post('profile/userwallet','ProfileController@UserWallet' )->name('UserWallet');
+    Route::post('profile/useraccount','ProfileController@UserAccounts')->name('UserAccounts');
+    Route::post('profile/updateprofile', 'ProfileController@UpdatePersonalProfile')->name('updatePersonalProfile');
 });
 
 // administrator
@@ -103,9 +107,29 @@ Route::middleware(['auth','role:administrator'])->prefix('administrator')->group
     // bounty
     Route::get('/bounty', 'AdministratorController@bountyIndex')->name('admin.bounty');
     Route::post('/bounty/approve', 'AdministratorController@bountyApprove')->name('admin.bounty.approve');
+
+    //White Paper
+    Route::get('/white-paper', 'WhitePaperController@index')->name('whitePaper.index');
+    Route::get('/white-paper/create', 'WhitePaperController@create')->name('whitePaper.create');
+    Route::post('/white-paper/store', 'WhitePaperController@store')->name('whitePaper.store');
+    Route::post('white-paper/upload', 'WhitePaperController@upload')->name('uploadWhitePaper');
+    Route::get('/white-paper/edit/{id}', 'WhitePaperController@edit')->name('whitePaper.edit');
+    Route::post('/white-paper/update/{id}', 'WhitePaperController@update')->name('whitePaper.update');
+    Route::get('white-paper/delete/{id}', 'WhitePaperController@destroy')->name('WhitePaper.delete');
+
+    //Images
+    Route::get('/images', 'ImageController@index')->name('images.index');
+    Route::get('/images/create', 'ImageController@create')->name('images.create');
+    Route::post('/images/store', 'ImageController@store')->name('images.store');
+    Route::post('images/upload', 'ImageController@upload')->name('images.upload');
+    Route::get('/images/edit/{id}', 'ImageController@edit')->name('images.edit');
+    Route::post('/images/update/{id}', 'ImageController@update')->name('images.update');
+    Route::get('images/delete/{id}', 'ImageController@destroy')->name('images.destroy');
 });
 
 Route::middleware(['auth','role:administrator'])
     ->prefix('edit-landing-page-content')->group(function() {
         Route::put('/save', 'LandingPageContentController@update')->name('editcontent.update');
 });
+
+Route::get('/api',"GuzzleController@index")->middleware('auth');

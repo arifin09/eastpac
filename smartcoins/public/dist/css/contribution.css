@@ -220,12 +220,12 @@ Updated	 :	10.26.2018
 }
 
 .tile-primary {
-	background: #2b56f5;
+	background: #680590;
 }
 
 .tile-light {
-	background: #eff6ff;
-	border: 2px solid #dce6f5;
+	background: #f8eafd;
+	border: 2px solid #f4d9ff;
 	padding: 32px 20px 28px;
 }
 
@@ -632,7 +632,7 @@ Updated	 :	10.26.2018
 }
 
 .status .btn {
-	margin-top: 10px;
+	/*margin-top: 10px;*/
 }
 
 .status-empty .status-icon {
@@ -1151,22 +1151,22 @@ div.dataTables_wrapper div.dataTables_filter label:before {
 	text-align: center;
 	line-height: 30px;
 	font-family: themify;
-	/* content: '\e610'; */
+	content: '\e610';
 	color: #abbbd9;
 	font-size: 15px;
 }
 
 div.dataTables_wrapper div.dataTables_filter input {
-	/* width: 100%; */
+	width: 100%;
 	padding: 10px 30px;
 	line-height: 20px;
 	font-size: 13px;
-	/* border: none; */
+	border: none;
 	background: transparent;
 }
 
 div.dataTables_wrapper div.dataTables_filter input:focus {
-	/* border: none; */
+	border: none;
 	background: transparent;
 	outline: none;
 	box-shadow: none;
@@ -1244,10 +1244,10 @@ div.dataTables_wrapper>.row>.col-12 {
 	}
 }
 
-/* .form-control {
+.form-control {
 	width: 100%;
 	border: none;
-} */
+}
 
 .page-link {
 	padding: 10px 12px;

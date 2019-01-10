@@ -40,6 +40,7 @@ php artisan db:seed
 
 ## 6. run 
 ```bash
+composer dump-autoload -o
 php artisan storage:link
 php artisan serve
 ```

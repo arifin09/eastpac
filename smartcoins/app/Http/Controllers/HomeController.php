@@ -87,4 +87,10 @@ class HomeController extends Controller
         $title = "KYC App";
         return view('layouts.sections.kycapp', compact('title'));
     }
+
+    public function dshareIndex()
+    {
+
+        return view('layouts.sections.dshare');
+    }
 }

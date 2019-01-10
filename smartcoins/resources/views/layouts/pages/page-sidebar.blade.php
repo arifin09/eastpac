@@ -14,7 +14,8 @@
                 @endif
 
                 <p>{{ Auth::user()->name }}</p>
-                <p style="margin-top: -5%"><b>Unique ID : IXIA1A105</b></p><br>
+                <br>
+                {{-- <p style="margin-top: -5%"><b>Unique ID : IXIA1A105</b></p> --}}
                 @if(Auth::user()->hasVerifiedEmail())
                     <p style="margin-top: -13%;color:green"><b>Verified <i class="fa fa-check"></i></b></p><br>
                 @else
@@ -34,6 +35,7 @@
             <li class="{{ (Route::currentRouteName() == "home.referral") ? 'active' : '' }}"><a href="{{route('home.referral')}}"><i class="fa fa-refresh"></i> <span>Referral</span></a></li>
             <li class="{{ (Route::currentRouteName() == "profileIndex") ? 'active' : '' }}"><a href="{{ route('profileIndex') }}"><i class="fa fa-user"></i> <span>Account</span></a></li>
             <li class="{{ (Route::currentRouteName() == "home.security") ? 'active' : '' }}"><a href="{{route('home.security')}}"><i class="fa fa-lock"></i> <span>Security</span></a></li>
+            <li class="{{ (Route::currentRouteName() == "home.dshare") ? 'active' : '' }}"><a href="{{route('home.dshare')}}"><i class="fa fa fa-file"></i> <span>D-Share</span></a></li>            
             @foreach(MenuController::loadMenu()->where('level', 1)->get() as $menu)
                 @if(MenuController::loadMenu()->where('parent', $menu->id)->count() > 0)
                     @if(is_null($menu->role))
@@ -83,6 +85,21 @@
                 <ul class="treeview-menu">
                     <li class=""><a href="{{ route('admin.managemenu') }}"><i class="fa fa-circle-o"></i> Menu</a></li>
                     <li class=""><a href="{{ route('admin.usermanage') }}"><i class="fa fa-circle-o"></i> Manage User</a></li>
+                </ul>
+            </li>
+            <li class="treeview
+                {{ (Route::currentRouteName() == "whitePaper.index") ? 'active' : '' }}">
+                <a href="#">
+                <i class="fa fa-key"></i> <span>Media</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class=""><a href="{{ route('whitePaper.index') }}"><i class="fa fa-circle-o"></i> File</a></li>
+                    <li class=""><a href="{{ route('images.index') }}"><i class="fa fa-circle-o"></i> Images</a></li>
+                    
+                        
                 </ul>
             </li>
             <li class="{{ (Route::currentRouteName() == "admin.config.index") ? 'active' : '' }}"><a href="{{route('admin.config.index')}}"><i class="fa fa-gears"></i> <span>Site Config</span></a></li>

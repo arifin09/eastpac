@@ -886,7 +886,7 @@ a:hover, a:focus, a:active { color: #de6288; }
 .io-zinnia .widget-title { color: #fff; }
 .io-zinnia .timeline-title { color: #ff6c3f; }
 .io-zinnia .timeline-done .timeline-title { color: #223b55; }
-.io-zinnia .header-txt p { color: #ffcece; }
+.io-zinnia .header-txt p { color: #8c282f; }
 .io-zinnia .btn { color: #fff; background-image: -webkit-linear-gradient(to right, #ff6c3f 0%, #fe4350 100%); background-image: linear-gradient(to right, #ff6c3f 0%, #fe4350 100%); }
 .io-zinnia .btn:before { background-image: -webkit-linear-gradient(to right, #fe4350 0%, #ff6c3f 100%); background-image: linear-gradient(to right, #fe4350 0%, #ff6c3f 100%); }
 .io-zinnia .btn-outline { background: transparent; border-color: rgba(255, 255, 255, 0.4); }

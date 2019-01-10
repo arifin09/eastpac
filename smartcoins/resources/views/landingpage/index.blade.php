@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="ICO Crypto is a modern and elegant landing page, created for ICO Agencies and digital crypto currency investment website.">
 	<!-- Fav Icon  -->
-	<link rel="shortcut icon" href="{{asset('landingpage/images/favicon.png')}}">
+	<link rel="shortcut icon" href="{{asset('landingpage/images/Logo2.png')}}">
 	<!-- Site Title  -->
 	<title>{{ App\SiteConfig::config('SITE_TITLE') }}</title>
 	<!-- Vendor Bundle CSS -->
@@ -34,45 +34,44 @@
             100%{
                 transform: rotateY(360deg);
             }
-		}
-		
-		.info{
-			border-radius: 5px;
-			background-color: #ffffffcf;
-			visibility: visible;
-			animation-delay: 1.35s;
-			color: #8c282f;
-			padding: 5px 10px;
-			
-		}
-		.social-bottom{
-			flex-direction: row;
-			display: flex;
-			padding: 10px 0px;
-			margin-top: 10px;
-		}
-		.social-bottom li{
-			display: list-item;
-			margin: 0px 5px;		
+	    }
+
+        .info{
+            border-radius: 5px;
+            background-color: #ffffffcf;
+            visibility: visible;
+            animation-delay: 1.35s;
+            color: #8c282f;
+            padding: 5px 10px;
+
         }
-		.social-bottom a{
-			color: #fff;
-		    text-align: center;
-    		line-height: 24px;
-			width: 24px;
-			display: block;
-		    
+        .social-bottom{
+            flex-direction: row;
+            display: flex;
+            padding: 10px 0px;
+            margin-top: 10px;
         }
-		.contact-info li span{
-			line-height: 15px;
-			font-size: 13px;
-		}
-		.contact-info li{
-			text-align: center;
-            font-weight: 500;	
+    	.social-bottom li{
+            display: list-item;
+            margin: 0px 5px;
+        }
+    	.social-bottom a{
+            color: #fff;
+            text-align: center;
+            line-height: 24px;
+            width: 24px;
+            display: block;
+        }
+        .contact-info li span{
+            line-height: 15px;
+            font-size: 13px;
+        }
+	.contact-info li{
+	text-align: center;
+            font-weight: 500;
             width:33.33%;
-        }  
-        
+        }
+
         .btn-edit{
             background: #5cb85c !important;
             padding: 6px 12px;
@@ -80,6 +79,13 @@
             line-height: 10px;
             margin-right: 0px;
             border-radius: 12px !important;
+        }
+        .btn-edit:hover{
+            color:#FFF !important;
+        }
+        .btn-for-upload{
+            font-size:12px;
+            width:180px;
         }
     </style>
 </head>
@@ -90,13 +96,13 @@
 	<header class="site-header is-sticky">
 
 	    <!-- Place Particle Js -->
-		<div id="particles-js" class="particles-container particles-js"></div>
+	<div id="particles-js" class="particles-container particles-js"></div>
 
-		<!-- Navbar -->
-		<div class="navbar navbar-full navbar-expand-lg is-transparent" id="mainnav">
+	<!-- Navbar -->
+	<div class="navbar navbar-full navbar-expand-lg is-transparent" id="mainnav">
             <a class="navbar-brand animated" data-animate="fadeInDown" data-delay=".65" href="./">
-                <img class="logo logo-dark" alt="logo" src="{{asset('landingpage/images/logo.png')}}" >
-                <img class="logo logo-light" alt="logo" src="{{asset('landingpage/images/logo-full-white.png')}}">
+                <img class="logo logo-dark" alt="logo" src="{{asset('landingpage/images/logobaru.png')}}" >
+                <img class="logo logo-light flip-logo" alt="logo" src="{{asset('landingpage/images/logo-full-white-new.png')}}">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
@@ -132,23 +138,23 @@
                     @endif
                 </ul>
             </div>
-		</div>
-		<!-- End Navbar -->
+	</div>
+	<!-- End Navbar -->
 
-		<!-- Banner/Slider -->
-		<div id="header" class="banner banner-zinnia">
+	<!-- Banner/Slider -->
+	<div id="header" class="banner banner-zinnia">
             <div class="ui-shape ui-shape-light ui-shape-header"></div>
-			<div class="container">
-				<div class="banner-content">
-					<div class="row align-items-center text-center justify-content-center">
-						<div class="col-sm-10 col-md-12 col-lg-10">
-							<div class="header-txt tab-center mobile-center">
+	<div class="container">
+	<div class="banner-content">
+	<div class="row align-items-center text-center justify-content-center">
+	<div class="col-sm-10 col-md-12 col-lg-10">
+	<div class="header-txt tab-center mobile-center">
                                 @role('administrator')
                                 <h1 class="animated" data-animate="fadeInUp" data-delay="1.25" id="txt-banner-1">{!!LandingPageContent::getJsonData('banner_1', 'banner_1', 'txt')!!}<br class="d-none d-xl-block"></h1>
                                 <div class="row" id="txt-banner-1-ctrl" style="display:none">
-                                    <div class="col-md-12">
-                                        <a href="#" id="txt-banner-1-cancel" class="btn btn-success btn-edit pull-right" style="color:white;"> <i class="fas fa-times"> </i> cancel </a>&nbsp;
-                                        <a href="#" id="txt-banner-1-save" class="btn btn-success btn-edit pull-right" style="color:white;"> <i class="fas fa-save"> </i> save </a>
+                                    <div class="col-md-12 text-center">
+                                        <a href="#" id="txt-banner-1-cancel" class="btn btn-success btn-edit"> <i class="fas fa-times"> </i> cancel </a>&nbsp;
+                                        <a href="#" id="txt-banner-1-save" class="btn btn-success btn-edit"> <i class="fas fa-save"> </i> save </a>
                                     </div>
                                 </div>
                                 @else
@@ -174,53 +180,46 @@
                                         LandingPageContent::getJsonData('banner_2', 'banner_2', 'txt')
                                     !!}</h3>
                                 @endrole
-								<div class="gaps size-1x d-none d-md-block"></div>
-								<p class="lead animated" data-animate="fadeInUp" data-delay="1.35">The next offer will start again at 21:30</p>
-								<div class="gaps size-1x d-none d-md-block"></div>
-								<ul class="btns animated" data-animate="fadeInUp" data-delay="1.45">
+    <h3>900,000 TAKENS ALREADY SOLD OUT</h3>
+	<div class="gaps size-1x d-none d-md-block"></div>
+	<p class="lead animated" data-animate="fadeInUp" data-delay="1.35"><span class="info ">next offer will start again at 21:30 (+8 GMT)</span> </p>
+	<div class="gaps size-1x d-none d-md-block"></div>
+	<ul class="btns animated" data-animate="fadeInUp" data-delay="1.45">
                                     <li><a href="{{route('register')}}" class="btn btn-icon-s3">JOIN PRE-SALE <i class="fas fa-angle-double-right"></i></a></li>
-									<li><a href="#" class="btn btn-icon-s3">WHITE PAPER <i class="fas fa-angle-double-right"></i></a></li>
-								</ul>
-							</div>
-						</div><!-- .col  -->
-					</div><!-- .row  -->
-				</div><!-- .banner-content  -->
-			</div><!-- .container  -->
-			<ul class="hr-social hr-social-mid animated" data-animate="fadeIn" data-delay="1.55">
-			    <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-			    <li><a href="#"><em class="fab fa-twitter"></em></a></li>
-			    <li><a href="#"><em class="fab fa-youtube"></em></a></li>
-			    <li><a href="#"><em class="fab fa-github"></em></a></li>
-			    <li><a href="#"><em class="fab fa-bitcoin"></em></a></li>
-			    <li><a href="#"><em class="fab fa-medium-m"></em></a></li>
-			</ul>
-		</div>
-		<!-- End Banner/Slider -->
-		<div class="presale-box animated" data-animate="fadeIn" data-delay="1.65">
+	<li><a href="#" class="btn btn-icon-s3">WHITE PAPER <i class="fas fa-angle-double-right"></i></a></li>
+	</ul>
+	</div>
+	</div><!-- .col  -->
+	</div><!-- .row  -->
+	</div><!-- .banner-content  -->
+	</div><!-- .container  -->
+	</div>
+	<!-- End Banner/Slider -->
+	<div class="presale-box animated" data-animate="fadeIn" data-delay="1.65">
             <div class="container">
                 <div class="row no-gutters justify-content-center mid-box">
                     <div class="col-xl-4 col-md-5">
                         <div class="presale-countdown">
-                            <h5>Pre-sale is Live Now</h5>
-							<div class="token-countdown" data-date="2018/12/05">
-								<div id="clockdiv">
-									<div>
-										<span class="days"></span>
-										<div class="smalltext">Days</div>
-									</div>
-									<div>
-										<span class="hours"></span>
-										<div class="smalltext">Hours</div>
-									</div>
-									<div>
-										<span class="minutes"></span>
-										<div class="smalltext">Minutes</div>
-									</div>
-									<div>
-										<span class="seconds"></span>
-										<div class="smalltext">Seconds</div>
-									</div>
-								</div></div>
+                            <h5>Pre-sale start in</h5>
+	<div class="token-countdown" data-date="2018/12/05">
+	<div id="clockdiv">
+	<div>
+	<span class="days"></span>
+	<div class="smalltext">Days</div>
+	</div>
+	<div>
+	<span class="hours"></span>
+	<div class="smalltext">Hours</div>
+	</div>
+	<div>
+	<span class="minutes"></span>
+	<div class="smalltext">Minutes</div>
+	</div>
+	<div>
+	<span class="seconds"></span>
+	<div class="smalltext">Seconds</div>
+	</div>
+	</div></div>
                         </div>
                     </div><!-- .col  -->
                     <div class="col-xl-6 col-md-7">
@@ -242,7 +241,7 @@
                     </div><!-- .col  -->
                 </div><!-- .row  -->
             </div><!-- .container  -->
-		</div><!-- .presale-box  -->
+	</div><!-- .presale-box  -->
 	</header>
 	<div class="gaps size-6x d-md-none"></div>
     <div class="gaps size-3x"></div>
@@ -253,8 +252,8 @@
     <div class="section section-pad about-section no-pb section-bg" id="about">
         <div class="container">
             <div class="row justify-content-center text-center">
-				<div class="col-md-10">
-					<div class="section-head-s7" id="txt-about-1">
+	<div class="col-md-10">
+	<div class="section-head-s7" id="txt-about-1">
                         <h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">          {!!LandingPageContent::getJsonData('about_1', 'about_1', 'title')!!}
                         </h2>
                         <p class="lead animated" data-animate="fadeInUp" data-delay=".2">
@@ -264,14 +263,14 @@
                     @role('administrator')
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-about-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-about-1" onclick="return false;"><i class="fa fa-save"> Save</i></a>
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:red;" id="cancel-about-1" onclick="return false;"><i class="fa fa-times"> Cancel</i></a>
+                            <a href="#" class="btn btn-success btn-edit" style="" id="edit-about-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-about-1" onclick="return false;"><i class="fa fa-save"> Save</i></a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-about-1" onclick="return false;"><i class="fa fa-times"> Cancel</i></a>
                         </div>
                     </div>
                     @endrole
-				</div>
-			</div>
+	</div>
+	</div>
         </div>
     </div>
     <!-- End Section -->
@@ -284,8 +283,21 @@
             <div class="row align-items-center">
                 <div class="col-lg-7 order-last">
                     <div class="animated" data-animate="fadeInUp" data-delay=".5">
-						<img src="{{asset('landingpage/images/zinnia/graph-zinnia-a.png')}}" alt="graph">
-					</div>
+    <img id="file-img-1" src="{{asset('landingpage/images/zinnia/graph-zinnia-a.png')}}" alt="graph" style="max-height:430px;">
+    <input type="hidden" id="path-img-1" value="{{asset('landingpage/images/zinnia/graph-zinnia-a.png')}}">
+    @role('administrator')
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <input type="file" id="upload-img-1" style="display:none;" class="btn-for-upload">
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <a href="#" class="btn btn-success btn-edit" style="" id="edit-img-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-img-1" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-img-1" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                        </div>
+                    </div>
+                    @endrole
+	</div>
                 </div>
                 <div class="col-lg-5 text-center text-lg-left res-m-bttm">
                     <div class="text-block" id="txt-about-2">
@@ -316,10 +328,10 @@
                     </div>
                     @role('administrator')
                     <div class="row">
-                        <div class="col-md-12">
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-about-2" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-about-2" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:red;" id="cancel-about-2" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                        <div class="col-md-12 text-center">
+                            <a href="#" class="btn btn-success btn-edit" style="" id="edit-about-2" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-about-2" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-about-2" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                         </div>
                     </div>
                     @endrole
@@ -335,14 +347,14 @@
         <div class="ui-shape ui-shape-s2"></div>
         <div class="container">
             <div class="row justify-content-center text-center">
-				<div class="col-md-6 col-sm-8">
-					<div class="section-head-s7" id="txt-beneffit">
-						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">
+	<div class="col-md-6 col-sm-8">
+	<div class="section-head-s7" id="txt-beneffit">
+	<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">
                             {!!
                                 LandingPageContent::getJsonData('beneffit', 'beneffit', 'title')
                             !!}
                         </h2>
-						<p class="animated" data-animate="fadeInUp" data-delay=".2">
+	<p class="animated" data-animate="fadeInUp" data-delay=".2">
                             {!!
                                 LandingPageContent::getJsonData('beneffit', 'beneffit', 'content')
                             !!}
@@ -350,15 +362,15 @@
                     </div>
                     @role('administrator')
                     <div class="row">
-                        <div class="col-md-12">
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-beneffit" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-beneffit" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:red;" id="cancel-beneffit" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                        <div class="col-md-12 text-center" style="margin-bottom:20px;">
+                            <a href="#" class="btn btn-success btn-edit" style="" id="edit-beneffit" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-beneffit" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-beneffit" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                         </div>
                     </div>
                     @endrole
-				</div>
-			</div>
+	</div>
+	</div>
             <div class="prblmsltn-list">
                 <div class="prblmsltn-item">
                     <div class="row">
@@ -422,12 +434,12 @@
 	<div class="section section-pad token-sale-section section-bg-zinnia" id="tokenSale">
 	    <div class="container">
             <div class="row justify-content-center text-center">
-				<div class="col-md-6">
-					<div class="section-head-s7">
-						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">EAST Tokens Details</h2>
-					</div>
-				</div>
-			</div>
+	<div class="col-md-6">
+	<div class="section-head-s7">
+	<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">EAST Tokens Details</h2>
+	</div>
+	</div>
+	</div>
         </div>
 
         <div class="container">
@@ -447,9 +459,9 @@
                         @role('administrator')
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="#" class="btn btn-success btn-edit" style="color:yellow;" id="edit-token-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="save-token-1" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="cancel-token-1" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="" id="edit-token-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-token-1" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-token-1" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                             </div>
                         </div>
                         @endrole
@@ -468,9 +480,9 @@
                         @role('administrator')
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="#" class="btn btn-success btn-edit" style="color:yellow;" id="edit-token-2" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="save-token-2" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="cancel-token-2" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="" id="edit-token-2" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-token-2" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-token-2" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                             </div>
                         </div>
                         @endrole
@@ -489,9 +501,9 @@
                         @role('administrator')
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="#" class="btn btn-success btn-edit" style="color:yellow;" id="edit-token-3" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="save-token-3" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="cancel-token-3" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="" id="edit-token-3" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-token-3" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-token-3" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                             </div>
                         </div>
                         @endrole
@@ -510,9 +522,9 @@
                         @role('administrator')
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="#" class="btn btn-success btn-edit" style="color:yellow;" id="edit-token-4" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="save-token-4" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="cancel-token-4" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="" id="edit-token-4" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-token-4" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-token-4" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                             </div>
                         </div>
                         @endrole
@@ -600,12 +612,12 @@
         <div class="ui-shape ui-shape-s3"></div>
 	    <div class="container">
             <div class="row justify-content-center text-center">
-				<div class="col-md-6">
-					<div class="section-head-s7">
-						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Token Allocation Forecast</h2>
-					</div>
-				</div>
-			</div>
+	<div class="col-md-6">
+	<div class="section-head-s7">
+	<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Token Allocation Forecast</h2>
+	</div>
+	</div>
+	</div>
             <div class="tab-s4">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs text-center animated" data-animate="fadeInUp" data-delay=".2">
@@ -695,9 +707,9 @@
 	            </div><!-- .col -->
 	            <div class="col-lg-7 text-center text-lg-left">
 	                <div class="section-head-s7">
-						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".2">Read Our Documents</h2>
-						<p class="animated" data-animate="fadeInUp" data-delay=".3">Here is our full documents that help you to understand about us.</p>
-					</div>
+	<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".2">Read Our Documents</h2>
+	<p class="animated" data-animate="fadeInUp" data-delay=".3">Here is our full documents that help you to understand about us.</p>
+	</div>
                     <ul class="document-list">
                         <li class="animated" data-animate="fadeInUp" data-delay=".4">
                             <a href="#" class="btn btn-outline btn-dropdown" data-toggle="dropdown">White Paper <i class="fas fa-caret-down"></i></a>
@@ -734,26 +746,26 @@
         <div class="ui-shape ui-shape-s4"></div>
 	    <div class="container">
             <div class="row justify-content-center text-center">
-				<div class="col-lg-6 col-sm-8">
-					<div class="section-head-s7" id="txt-token-11">
-						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">{!!
+	<div class="col-lg-6 col-sm-8">
+	<div class="section-head-s7" id="txt-token-11">
+	<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">{!!
                             LandingPageContent::getJsonData('token_11', 'token_11', 'title')
                         !!}</h2>
-						<p class="animated" data-animate="fadeInUp" data-delay=".2">{!!
+	<p class="animated" data-animate="fadeInUp" data-delay=".2">{!!
                             LandingPageContent::getJsonData('token_11', 'token_11', 'content')
                         !!}</p>
                     </div>
                     @role('administrator')
                     <div class="row">
-                        <div class="col-md-12">
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-token-11" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-token-11" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="cancel-token-11" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                        <div class="col-md-12 text-center" style="margin-bottom:20px;">
+                            <a href="#" class="btn btn-success btn-edit" style="" id="edit-token-11" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-token-11" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-token-11" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                         </div>
                     </div>
                     @endrole
                 </div>
-			</div>
+	</div>
 	        <div class="row align-items-center">
 	            <div class="col-lg-7 res-m-bttm">
 	                <div class="row justify-content-between text-center text-lg-left">
@@ -771,10 +783,10 @@
                             </div>
                             @role('administrator')
                             <div class="row">
-                                <div class="col-md-12">
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-token-21" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-token-21" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="cancel-token-21" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <div class="col-md-12 text-center" style="margin-bottom:30px;">
+                                    <a href="#" class="btn btn-success btn-edit" style="" id="edit-token-21" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-token-21" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-token-21" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                                 </div>
                             </div>
                             @endrole
@@ -793,10 +805,10 @@
                             </div>
                             @role('administrator')
                             <div class="row">
-                                <div class="col-md-12">
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-token-22" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-token-22" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="cancel-token-22" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <div class="col-md-12 text-center">
+                                    <a href="#" class="btn btn-success btn-edit" style="" id="edit-token-22" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-token-22" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-token-22" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                                 </div>
                             </div>
                             @endrole
@@ -815,10 +827,10 @@
                             </div>
                             @role('administrator')
                             <div class="row">
-                                <div class="col-md-12">
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-token-23" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-token-23" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="cancel-token-23" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <div class="col-md-12 text-center">
+                                    <a href="#" class="btn btn-success btn-edit" style="" id="edit-token-23" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-token-23" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-token-23" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                                 </div>
                             </div>
                             @endrole
@@ -837,10 +849,10 @@
                             </div>
                             @role('administrator')
                             <div class="row">
-                                <div class="col-md-12">
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-token-24" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-token-24" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="cancel-token-24" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <div class="col-md-12 text-center">
+                                    <a href="#" class="btn btn-success btn-edit" style="" id="edit-token-24" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-token-24" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-token-24" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                                 </div>
                             </div>
                             @endrole
@@ -857,7 +869,7 @@
 	            </div><!-- .col -->
 	            <div class="col-lg-5 order-first order-lg-last res-m-bttm">
 	                <div class="service-img animated" data-animate="fadeInUp" data-delay=".3">
-	                    <img src="{{asset('landingpage/images/zinnia/app-screen.png')}}" alt="app-screen">
+	                    <img src="{{asset('landingpage/images/zinnia/app-screen2.png')}}" alt="app-screen">
 	                </div>
 	            </div><!-- .col -->
 	        </div><!-- .row -->
@@ -868,15 +880,15 @@
 
 	<!-- Roadmap Section -->
 	<div class="section section-pad roadmap-section section-bg-zinnia" id="roadmap">
-		<div class="container">
+	<div class="container">
           <div class="row justify-content-center text-center">
-				<div class="col-md-6">
-					<div class="section-head-s7">
-						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Roadmap</h2>
-						<p class="animated" data-animate="fadeInUp" data-delay=".2">Our team working hardly to make archive lorem ipsum dolor sit amet, consectetur amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-			</div>
+	<div class="col-md-6">
+	<div class="section-head-s7">
+	<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Roadmap</h2>
+	<p class="animated" data-animate="fadeInUp" data-delay=".2">Our team working hardly to make archive lorem ipsum dolor sit amet, consectetur amet, consectetur adipiscing elit.</p>
+	</div>
+	</div>
+	</div>
            <div class="timeline-row timeline-row-odd timeline-row-done animated" data-animate="fadeInUp" data-delay=".3">
                <div class="row no-gutters text-left text-lg-center justify-content-center">
                    <div class="col-lg">
@@ -1021,10 +1033,10 @@
                         </div>
                         @role('administrator')
                         <div class="row" style="">
-                            <div class="col-md-12" style="margin-bottom:40px;">
-                                <a href="#" class="btn btn-success btn-edit" style="color:blue;" id="edit-team" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:blue;" id="save-team" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:blue;" id="cancel-team" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                            <div class="col-md-12 text-center" style="margin-bottom:40px;">
+                                <a href="#" class="btn btn-success btn-edit" style="" id="edit-team" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-team" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-team" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                             </div>
                         </div>
                         @endrole
@@ -1309,298 +1321,298 @@
             </div>
         </div>
 	<!-- Section Products -->
-	<div class="section section-pad section-bg-zinnia" id="partners">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-md-6 offset-md-3">
-					<div class="section-head">
-						<h3 class="section-title-md animated" data-animate="fadeInUp" data-delay=".1">Our Products</h3>
-					</div>
-				</div>
-			</div>
-			<div class="partner-list">
-				<div class="row text-center">
-						<div class="col-sm col-6"></div>
-					<div class="col-sm col-6">
-						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".2">
-							<img src="{{asset('landingpage/images/east_book.png')}}" alt="partner">
-						</div>
-					</div>
-					<div class="col-sm col-6">
-						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".3">
-							<img src="{{asset('landingpage/images/east_dax.png')}}" alt="partner">
-						</div>
-					</div>
-					<div class="col-sm col-6">
-						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".4">
-							<img src="{{asset('landingpage/images/east_pedia.png')}}" alt="partner">
-						</div>
-					</div>
-					<div class="col-sm col-6">
-						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".5">
-							<img src="{{asset('landingpage/images/east_teleco.png')}}" alt="partner">
-						</div>
-					</div>
-					<div class="col-sm col-6"></div>
-					<div class="row text-center">
-							<div class="col-sm col-6"></div>
-					<div class="col-sm col-6">
-						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".6">
-							<img src="{{asset('landingpage/images/east_pasific.png')}}" alt="partner">
-						</div>
-					</div>
-					<div class="col-sm col-6">
-						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".7">
-							<img src="{{asset('landingpage/images/EASTMERCHANT.png')}}" alt="partner">
-						</div>
-					</div>
-					<div class="col-sm col-6">
-							<div class="single-partner animated" data-animate="fadeInUp" data-delay=".8">
-								<img src="{{asset('landingpage/images/east_pay.png')}}" alt="partner">
-							</div>
-					</div>
-					<div class="col-sm col-6">
-							<div class="single-partner animated" data-animate="fadeInUp" data-delay=".9">
-								<img src="{{asset('landingpage/images/eastern_atm.png')}}" alt="partner">
-							</div>
-						</div>
-						<div class="col-sm col-6"></div>
-				</div>
+	<div class="section section-pad section-bg-zinnia" id="partners" style="padding-bottom: 0px !important">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6 offset-md-3">
+                    <div class="section-head">
+                        <h3 class="section-title-md animated" data-animate="fadeInUp" data-delay=".1">Our Products</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="partner-list">
+                <div class="row text-center">
+                        <div class="col-sm col-6"></div>
+                    <div class="col-sm col-6">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".2">
+                            <img src="{{asset('landingpage/images/1.png')}}" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm col-6">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".3">
+                            <img src="{{asset('landingpage/images/2.png')}}" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm col-6">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".4">
+                            <img src="{{asset('landingpage/images/3.png')}}" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm col-6">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".5">
+                            <img src="{{asset('landingpage/images/4.png')}}" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm col-6"></div>
+                    <div class="row text-center">
+                            <div class="col-sm col-6"></div>
+                    <div class="col-sm col-6">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".6">
+                            <img src="{{asset('landingpage/images/5.png')}}" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm col-6">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".7">
+                            <img src="{{asset('landingpage/images/6.png')}}" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm col-6">
+                            <div class="single-partner animated" data-animate="fadeInUp" data-delay=".8">
+                                <img src="{{asset('landingpage/images/7.png')}}" alt="partner">
+                            </div>
+                    </div>
+                    <div class="col-sm col-6">
+                            <div class="single-partner animated" data-animate="fadeInUp" data-delay=".9">
+                                <img src="{{asset('landingpage/images/8.png')}}" alt="partner">
+                            </div>
+                        </div>
+                        <div class="col-sm col-6"></div>
+                </div>
 
-			</div>
-		</div>
-	</div>
-	<!-- End Section -->
+            </div>
+        </div>
+    </div>
+    <!-- End Section -->
 
 
 	<!-- Start Section -->
 	<div class="section section-pad-md section-bg" id="faq">
 	    <div class="ui-shape ui-shape-s6"></div>
-		<div class="container">
-			<div class="row justify-content-center text-center">
-				<div class="col-md-7">
-					<div class="section-head-s7" id="txt-faq">
-						<h2 class="section-title-s7 animated text-section" data-animate="fadeInUp" data-delay=".1">{!!
+	<div class="container">
+	<div class="row justify-content-center text-center">
+	<div class="col-md-7">
+	<div class="section-head-s7" id="txt-faq">
+	<h2 class="section-title-s7 animated text-section" data-animate="fadeInUp" data-delay=".1">{!!
                             LandingPageContent::getJsonData('faq', 'faq', 'title')
                         !!}</h2>
-						<p class="animated text-section" data-animate="fadeInUp" data-delay=".2">{!!
+	<p class="animated text-section" data-animate="fadeInUp" data-delay=".2">{!!
                             LandingPageContent::getJsonData('faq', 'faq', 'content')
                         !!}</p>
                     </div>
                     @role('administrator')
                     <div class="row" style="">
-                        <div class="col-md-12" style="margin-bottom:40px;">
-                            <a href="#" class="btn btn-success btn-edit" style="color:blue;" id="edit-faq" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" class="btn btn-success btn-edit" style="display:none;color:blue;" id="save-faq" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                            <a href="#" class="btn btn-success btn-edit" style="display:none;color:blue;" id="cancel-faq" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                        <div class="col-md-12 text-center" style="margin-bottom:40px;">
+                            <a href="#" class="btn btn-success btn-edit" style="" id="edit-faq" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-faq" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-faq" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                         </div>
                     </div>
                     @endrole
-				</div>
-			</div>
-			<div class="row align-items-center justify-content-center">
-				<div class="col-md-10">
-					<div class="tab-custom-s3">
-						<!-- Nav tabs -->
-						<ul class="nav nav-tabs text-center justify-content-center animated" data-animate="fadeInUp" data-delay=".1">
-							<li class="nav-item">
-								<a class="nav-link active" data-toggle="tab" href="#tab-1">General</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#tab-2">Pre-ICO &amp; ICO</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#tab-3">Tokens</a>
-							</li>
-						</ul>
-						<div class="gaps size-1x"></div>
-						<!-- Tab panes -->
-						<div class="tab-content animated" data-animate="fadeInUp" data-delay=".2">
-							<div class="tab-pane fade show active" id="tab-1">
-								<div class="accordion-s2" id="accordion-1">
-									<div class="card active">
-										<div class="card-header">
-											<h5>
-												<a data-toggle="collapse" data-target="#collapse-1-1">
-													What is EAST COIN?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-1-1" class="collapse show" data-parent="#accordion-1">
-											<div class="card-body">
-												<p>ICO Crypto - is unique blockchain platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital,  and the way investors buy and sell. </p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<h5>
-												<a class="collapsed" data-toggle="collapse" data-target="#collapse-1-2">
-												  What cryptocurrencies can I use to purchase?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-1-2" class="collapse" data-parent="#accordion-1">
-											<div class="card-body">
-												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<h5>
-												<a class="collapsed" data-toggle="collapse" data-target="#collapse-1-3">
-												  How can I participate in the EAST Token sale?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-1-3" class="collapse" data-parent="#accordion-1">
-											<div class="card-body">
-												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<h5>
-												<a class="collapsed" data-toggle="collapse" data-target="#collapse-1-4">
-												  How do I benefit from the EAST Token?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-1-4" class="collapse" data-parent="#accordion-1">
-											<div class="card-body">
-												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div><!-- End tab-pane -->
-							<div class="tab-pane fade" id="tab-2">
-								<div class="accordion-s2" id="accordion-2">
-									<div class="card active">
-										<div class="card-header">
-											<h5>
-												<a data-toggle="collapse" data-target="#collapse-2-1">
-												  Which of us ever undertakes laborious?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-2-1" class="collapse show" data-parent="#accordion-2">
-											<div class="card-body">
-												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<h5>
-												<a class="collapsed" data-toggle="collapse" data-target="#collapse-2-2">
-													Who do not know how to pursue rationally?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-2-2" class="collapse" data-parent="#accordion-2">
-											<div class="card-body">
-												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<h5>
-												<a class="collapsed" data-toggle="collapse" data-target="#collapse-2-4">
-												   Their separate existence is a myth?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-2-4" class="collapse" data-parent="#accordion-2">
-											<div class="card-body">
-												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<h5>
-												<a class="collapsed" data-toggle="collapse" data-target="#collapse-2-3">
-												  Pityful a rethoric question ran over her cheek?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-2-3" class="collapse" data-parent="#accordion-2">
-											<div class="card-body">
-												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div><!-- End tab-pane -->
-							<div class="tab-pane fade" id="tab-3">
-								<div class="accordion-s2" id="accordion-3">
-									<div class="card active">
-										<div class="card-header">
-											<h5>
-												<a data-toggle="collapse" data-target="#collapse-3-1">
-													When she reached the first hills?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-3-1" class="collapse show" data-parent="#accordion-3">
-											<div class="card-body">
-												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<h5>
-												<a class="collapsed" data-toggle="collapse" data-target="#collapse-3-2">
-												  Big Oxmox advised her not to do?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-3-2" class="collapse" data-parent="#accordion-3">
-											<div class="card-body">
-												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<h5>
-												<a class="collapsed" data-toggle="collapse" data-target="#collapse-3-3">
-												  Which roasted parts of sentences fly into your mouth?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-3-3" class="collapse" data-parent="#accordion-3">
-											<div class="card-body">
-												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<h5>
-												<a class="collapsed" data-toggle="collapse" data-target="#collapse-3-4">
-												  Vokalia and Consonantia, there live?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
-												</a>
-											</h5>
-										</div>
-										<div id="collapse-3-4" class="collapse" data-parent="#accordion-3">
-											<div class="card-body">
-												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div><!-- .tab-pane -->
-						</div><!-- .tab-content -->
-					</div><!-- .tab-custom -->
-				</div><!-- .col -->
-			</div><!-- .row -->
-		</div><!-- .container -->
+	</div>
+	</div>
+	<div class="row align-items-center justify-content-center">
+	<div class="col-md-10">
+	<div class="tab-custom-s3">
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs text-center justify-content-center animated" data-animate="fadeInUp" data-delay=".1">
+	<li class="nav-item">
+	<a class="nav-link active" data-toggle="tab" href="#tab-1">General</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" data-toggle="tab" href="#tab-2">Pre-ICO &amp; ICO</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" data-toggle="tab" href="#tab-3">Tokens</a>
+	</li>
+	</ul>
+	<div class="gaps size-1x"></div>
+	<!-- Tab panes -->
+	<div class="tab-content animated" data-animate="fadeInUp" data-delay=".2">
+                                <div class="tab-pane fade show active" id="tab-1">
+                                        <div class="accordion-s2" id="accordion-1">
+                                            <div class="card active">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a data-toggle="collapse" data-target="#collapse-1-1">
+                                                            What is EAST COIN?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-1-1" class="collapse show" data-parent="#accordion-1">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique blockchain platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital,  and the way investors buy and sell. </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse-1-2">
+                                                          What cryptocurrencies can I use to purchase?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-1-2" class="collapse" data-parent="#accordion-1">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse-1-3">
+                                                          How can I participate in the EAST Token sale?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-1-3" class="collapse" data-parent="#accordion-1">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse-1-4">
+                                                          How do I benefit from the EAST Token?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-1-4" class="collapse" data-parent="#accordion-1">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End tab-pane -->
+                                    <div class="tab-pane fade" id="tab-2">
+                                        <div class="accordion-s2" id="accordion-2">
+                                            <div class="card active">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a data-toggle="collapse" data-target="#collapse-2-1">
+                                                          Which of us ever undertakes laborious?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-2-1" class="collapse show" data-parent="#accordion-2">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse-2-2">
+                                                            Who do not know how to pursue rationally?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-2-2" class="collapse" data-parent="#accordion-2">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse-2-4">
+                                                           Their separate existence is a myth?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-2-4" class="collapse" data-parent="#accordion-2">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse-2-3">
+                                                          Pityful a rethoric question ran over her cheek?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-2-3" class="collapse" data-parent="#accordion-2">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End tab-pane -->
+                                    <div class="tab-pane fade" id="tab-3">
+                                        <div class="accordion-s2" id="accordion-3">
+                                            <div class="card active">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a data-toggle="collapse" data-target="#collapse-3-1">
+                                                            When she reached the first hills?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-3-1" class="collapse show" data-parent="#accordion-3">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse-3-2">
+                                                          Big Oxmox advised her not to do?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-3-2" class="collapse" data-parent="#accordion-3">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse-3-3">
+                                                          Which roasted parts of sentences fly into your mouth?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-3-3" class="collapse" data-parent="#accordion-3">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>
+                                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse-3-4">
+                                                          Vokalia and Consonantia, there live?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse-3-4" class="collapse" data-parent="#accordion-3">
+                                                    <div class="card-body">
+                                                        <p style="color:#fe4350">ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .tab-pane -->
+	</div><!-- .tab-content -->
+	</div><!-- .tab-custom -->
+	</div><!-- .col -->
+	</div><!-- .row -->
+	</div><!-- .container -->
 	</div>
 	<!-- End Section -->
 
@@ -1608,51 +1620,48 @@
 	<!-- Start Section -->
 	<div class="section section-pad-md section-bg-alt" id="contact">
 	    <div class="ui-shape ui-shape-s7"></div>
-		<div class="container">
-			<div class="row text-center">
-				<div class="col">
-					<div class="section-head-s7">
-						<h2 class="section-title-s7 animated text-contact" data-animate="fadeInUp" data-delay=".1">Contact EASTERN PASIFIC</h2>
-						<p class="animated text-contact" data-animate="fadeInUp" data-delay=".2">Any question? Reach out to us and we’ll get back to you shortly.</p>
-					</div>
-				</div><!-- .col -->
-			</div><!-- .row -->
-			<div class="row justify-content-center">
-				<div class="col-lg-8">
-					<ul class="contact-info" style="
-                            font-size: .7em;
-                            font-weight: 500;
-                        ">
-						<li class="animated" data-animate="fadeInUp" data-delay=".3"><em class="fa fa-phone"></em><span>{!! App\SiteConfig::config('CONTACT_PHONE_NUMBER') !!}</span></li>
-						<li class="animated" data-animate="fadeInUp" data-delay=".4"><em class="fa fa-envelope"></em><span> {!! App\SiteConfig::config('CONTACT_EMAIL') !!}</span></li>
-						<li class="animated" data-animate="fadeInUp" data-delay=".5"><em class="fa fa-building"></em><span>{!! App\SiteConfig::config('CONTACT_ADDRESS') !!}</span></li>
-					</ul>
-				</div><!-- .col -->
-			</div><!-- .row -->
-			<div class="row justify-content-center">
-				<div class="col-lg-8">
-					<form id="contact-form" class="form-message text-center show-error-hint" action="form/contact.php" method="post">
-						<div class="form-results"></div>
-						<div class="input-field animated" data-animate="fadeInUp" data-delay=".6">
-							<input name="contact-name" type="text" class="input-line required">
-							<label class="input-title">Your Name</label>
-						</div>
-						<div class="input-field animated" data-animate="fadeInUp" data-delay=".7">
-							<input name="contact-email" type="email" class="input-line required email">
-							<label class="input-title">Your Email</label>
-						</div>
-						<div class="input-field animated" data-animate="fadeInUp" data-delay=".8">
-							<textarea name="contact-message" class="txtarea input-line required"></textarea>
-							<label class="input-title">Your Message</label>
-						</div>
-						<input type="text" class="d-none" name="form-anti-honeypot" value="">
-						<div class="input-field animated" data-animate="fadeInUp" data-delay=".9">
-							<button type="submit" class="btn">Submit</button>
-						</div>
-					</form>
-				</div><!-- .col -->
-			</div><!-- .row -->
-		</div><!-- .container -->
+	<div class="container">
+	<div class="row text-center">
+	<div class="col">
+	<div class="section-head-s7">
+	<h2 class="section-title-s7 animated text-contact" data-animate="fadeInUp" data-delay=".1">Contact EASTERN PACIFIC</h2>
+	<p class="animated text-contact" data-animate="fadeInUp" data-delay=".2">Any question? Reach out to us and we’ll get back to you shortly.</p>
+	</div>
+	</div><!-- .col -->
+	</div><!-- .row -->
+	<div class="row justify-content-center">
+	<div class="col-lg-8">
+	<ul class="contact-info">
+	<li class="animated" data-animate="fadeInUp" data-delay=".3"><em class="fa fa-phone"></em><br><span>{!! App\SiteConfig::config('CONTACT_PHONE_NUMBER') !!}</span></li>
+	<li class="animated" data-animate="fadeInUp" data-delay=".4"><em class="fa fa-envelope"></em><br><span> {!! App\SiteConfig::config('CONTACT_EMAIL') !!}</span></li>
+	<li class="animated" data-animate="fadeInUp" data-delay=".5"><em class="fa fa-building"></em><br><span>{!! App\SiteConfig::config('CONTACT_ADDRESS') !!}</span></li>
+	</ul>
+	</div><!-- .col -->
+	</div><!-- .row -->
+	<div class="row justify-content-center">
+	<div class="col-lg-8">
+	<form id="contact-form" class="form-message text-center show-error-hint" action="form/contact.php" method="post">
+	<div class="form-results"></div>
+	<div class="input-field animated" data-animate="fadeInUp" data-delay=".6">
+	<input name="contact-name" type="text" class="input-line required">
+	<label class="input-title">Your Name</label>
+	</div>
+	<div class="input-field animated" data-animate="fadeInUp" data-delay=".7">
+	<input name="contact-email" type="email" class="input-line required email">
+	<label class="input-title">Your Email</label>
+	</div>
+	<div class="input-field animated" data-animate="fadeInUp" data-delay=".8">
+	<textarea name="contact-message" class="txtarea input-line required"></textarea>
+	<label class="input-title">Your Message</label>
+	</div>
+	<input type="text" class="d-none" name="form-anti-honeypot" value="">
+	<div class="input-field animated" data-animate="fadeInUp" data-delay=".9">
+	<button type="submit" class="btn">Submit</button>
+	</div>
+                    </form>
+	</div><!-- .col -->
+	</div><!-- .row -->
+	</div><!-- .container -->
 	</div>
 	<!-- End Section -->
 
@@ -1678,11 +1687,15 @@
 	                <div class="widget-item">
 	                    <h5 class="widget-title">Company</h5>
 	                    <ul class="widget-links">
+                            <li class="nav-item"></li>
 	                        <li><a href="#">Home</a></li>
 	                        <li><a href="#about">About</a></li>
-	                        <li><a href="#">Blog</a></li>
-	                        <li><a href="#faq">FAQ</a></li>
-	                        <li><a href="#contact">Contact Us</a></li>
+	                        <li><a href="#benifits">Benefit</a></li>
+	                        <li><a href="#tokenSale">Token Sale</a></li>
+	                        <li><a href="#roadmap">Roadmap</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#faq">FAQs</a></li>
+                            <li><a href="#contact">Contact</a></li>
 	                    </ul>
 	                </div>
 	            </div><!-- .col -->
@@ -1697,6 +1710,14 @@
                                 <button type="submit" class="btn btn-plane"><i class="fas fa-paper-plane"></i></button>
                                 <div class="subscribe-results"></div>
                             </form>
+                            <ul class="social-bottom" data-animate="fadeIn" data-delay="1.55" style="z-index:999;">
+                                <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+                                <li><a href="#"><em class="fab fa-twitter"></em></a></li>
+                                <li><a href="#"><em class="fab fa-youtube"></em></a></li>
+                                <li><a href="#"><em class="fab fa-github"></em></a></li>
+                                <li><a href="#"><em class="fab fa-bitcoin"></em></a></li>
+                                <li><a href="#"><em class="fab fa-medium-m"></em></a></li>
+                            </ul>
 	                    </div>
 	                </div>
 	            </div><!-- .col -->
@@ -1709,7 +1730,7 @@
                         </a>
                     </div>
                     <div class="col-sm-6 text-sm-right">
-                        <span class="copyright-text"> &copy; EASTERN PASIFIC, 2019</span>
+                        <span class="copyright-text"> &copy; EASTERN PACIFIC, 2019</span>
                     </div>
                 </div>
 	        </div>
@@ -1720,49 +1741,49 @@
 
 	<!-- Preloader !remove please if you do not want -->
 	<div id="preloader">
-		<div id="loader"></div>
-		<div class="loader-section loader-top"></div>
-   		<div class="loader-section loader-bottom"></div>
-	</div>
+            <div id="loader"><img src="{{asset('landingpage/images/Logo2.png')}}" width="100%" height="100%"></div>
+            <div class="loader-section loader-top"></div>
+            <div class="loader-section loader-bottom"></div>
+    </div>
 	<!-- Preloader End -->
 
 	<!-- JavaScript (include all script here) -->
 	<script>
-		function getTimeRemaining(endtime) {
-			var t = Date.parse(endtime) - Date.parse(new Date());
-			var seconds = Math.floor((t / 1000) % 60);
-			var minutes = Math.floor((t / 1000 / 60) % 60);
-			var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-			var days = Math.floor(t / (1000 * 60 * 60 * 24));
-			return {
-				'total': t,
-				'days': days,
-				'hours': hours,
-				'minutes': minutes,
-				'seconds': seconds
-			};
-		}
-		function initializeClock(id, endtime) {
-			var clock = document.getElementById(id);
-			var daysSpan = clock.querySelector('.days');
-			var hoursSpan = clock.querySelector('.hours');
-			var minutesSpan = clock.querySelector('.minutes');
-			var secondsSpan = clock.querySelector('.seconds');
-			function updateClock() {
-				var t = getTimeRemaining(endtime);
-				daysSpan.innerHTML = t.days;
-				hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-				minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-				secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-				if (t.total <= 0) {
-					clearInterval(timeinterval);
-				}
-			}
-			updateClock();
-			var timeinterval = setInterval(updateClock, 1000);
-		}
-		var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-		initializeClock('clockdiv', deadline);
+	function getTimeRemaining(endtime) {
+	var t = Date.parse(endtime) - Date.parse(new Date());
+	var seconds = Math.floor((t / 1000) % 60);
+	var minutes = Math.floor((t / 1000 / 60) % 60);
+	var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+	var days = Math.floor(t / (1000 * 60 * 60 * 24));
+	return {
+	'total': t,
+	'days': days,
+	'hours': hours,
+	'minutes': minutes,
+	'seconds': seconds
+	};
+	}
+	function initializeClock(id, endtime) {
+	var clock = document.getElementById(id);
+	var daysSpan = clock.querySelector('.days');
+	var hoursSpan = clock.querySelector('.hours');
+	var minutesSpan = clock.querySelector('.minutes');
+	var secondsSpan = clock.querySelector('.seconds');
+	function updateClock() {
+	var t = getTimeRemaining(endtime);
+	daysSpan.innerHTML = t.days;
+	hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+	minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+	secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+	if (t.total <= 0) {
+	clearInterval(timeinterval);
+	}
+	}
+	updateClock();
+	var timeinterval = setInterval(updateClock, 1000);
+	}
+	var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+	initializeClock('clockdiv', deadline);
 	</script>
 	<script src="{{asset('landingpage/assets/js/jquery.bundle.js?ver=142')}}"></script>
     <script src="{{asset('landingpage/assets/js/script.js?ver=142')}}"></script>
@@ -1889,6 +1910,45 @@
         });
 
         // End Edit About 2
+
+        // Function upload base64
+        function encodeImageFileAsURL(cb) {
+            return function(){
+                var file = this.files[0];
+                var reader  = new FileReader();
+                reader.onloadend = function () {
+                    cb(reader.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+        //
+
+        // Edit img-1
+
+        $('#edit-img-1').click(function(){
+            $(this).hide();
+            $('#save-img-1').show();
+            $('#cancel-img-1').show();
+            $('#upload-img-1').show();
+
+        });
+
+        $('#upload-img-1').change(encodeImageFileAsURL(function(base64Img){
+            $('#file-img-1').attr('src', base64Img);
+        }));
+
+        $('#cancel-img-1').click(function(){
+            $(this).hide();
+            var pathImage= $('#path-img-1').val();
+            $('#edit-img-1').show();
+            $('#save-img-1').hide();
+            $('#upload-img-1').hide();
+            $('#file-img-1').attr('src', pathImage);
+        });
+
+
+        // End Edit img-1
 
         // Beneffit
         var beneffit_temp = "";
@@ -2725,7 +2785,7 @@
             $('#txt-banner-2').attr('contenteditable', 'false');
         });
 
-        $('#txt-banner-2-save').click(function() {            
+        $('#txt-banner-2-save').click(function() {
             $.ajax({
                 method: "put",
                 url: '{{route('editcontent.update')}}',
@@ -2734,7 +2794,7 @@
                     key: 'banner_2',
                     jdata: {
                         "banner_2": {
-                                "txt" : $('#txt-banner-2').text(),                                
+                                "txt" : $('#txt-banner-2').text(),
                             }
                     }
                 }
@@ -2749,7 +2809,7 @@
                     $('#txt-banner-2').css('border', 'none');
                     $('#txt-banner-2').attr('contenteditable', 'false');
                     if(res.type == 'error') {
-                        $('#txt-banner-2').html(faq_temp);                        
+                        $('#txt-banner-2').html(faq_temp);
                     } else {
                         $('#txt-banner-2').html($('#txt-banner-2').html());
                     }
