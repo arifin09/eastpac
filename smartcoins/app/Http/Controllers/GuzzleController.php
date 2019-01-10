@@ -10,7 +10,8 @@ class GuzzleController extends Controller
 
     public function index()
     {
-        data_client(SiteConfig::config('ETHEREUM_ADDRESS'));
-        // data_client('http://192.168.0.133:3333/');
+        // data_client(SiteConfig::config('ETHEREUM_ADDRESS'));
+        // sent_transaction('http://192.168.100.207:3335/');
+        getEthPrice('https://sandbox-api.coinmarketcap.com');
     }
 }

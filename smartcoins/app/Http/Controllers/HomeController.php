@@ -52,8 +52,9 @@ class HomeController extends Controller
         //auth()->user()->givePermissionTo('Manage My Profile');
         //auth()->user()->assignRole('Administrator');
         $title = "Dashboard";
+        $get_eth_price = json_decode(getEthPrice('https://sandbox-api.coinmarketcap.com'));
 
-        return view('layouts.sections.home', compact('title'));
+        return view('layouts.sections.home', compact('title', 'get_eth_price'));
     }
 
     public function contribution()

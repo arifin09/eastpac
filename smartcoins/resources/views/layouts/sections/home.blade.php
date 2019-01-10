@@ -92,7 +92,8 @@
                     <div class="tile-item tile-primary">
                         <div class="tile-bubbles"></div>
                         <h1 class="tile-title">1 ETH = 1000 EAST</h1>
-                        <h6 class="tile-info">1 ETH = 156.89 USD</h6>
+                        {{-- <h6 class="tile-info">1 ETH = 156.89 USD</h6> --}}
+                        <h6 class="tile-info">1 ETH = {{$get_eth_price->data->quote->USD->price}} USD</h6>
                     </div>
                 </div><!-- end exchange -->
             </div>
@@ -130,7 +131,7 @@
                                     </span>
                                 </div>
                                 </div>
-                            <div class="col-md-1 col-sm-1 col-xs-1" style="margin-top:10px"><i class="fa fa-exchange"></i></div>       
+                            <div class="col-md-1 col-sm-1 col-xs-1" style="margin-top:10px"><i class="fa fa-exchange"></i></div>
                             <div class="col-md-4 col-sm-2 col-xs-2" style="margin-top:10px"><p><b>100 EAST</b></p></div>
                             </div>
                             <div class="row">
@@ -142,7 +143,7 @@
                                 <div class="col-md-12"><button class="btn btn-sm btn-warning pull-right">Buy Token</button></div>
                             </div>
                         </div>
-                    </div>     
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -187,7 +188,7 @@
                                                         <span class="hours"></span>
                                                         <div class="smalltext">Hours</div>
                                                         </div>
-                                
+
                                                 </td>
                                                 <td>
                                                     <div>
@@ -204,9 +205,9 @@
                                             </tr>
                                         </table>
                                     </div>
-                            </div> 
+                            </div>
                         </div>
-                    </div>     
+                    </div>
                 </div><!--end token sale progress-->
             </div>
             <hr>
@@ -250,8 +251,8 @@
                         </tr>
 
                     </tbody>
-                
-            
+
+
                 </table>
                 <div class="box-footer clearfix">
                     <ul class="pagination pagination-sm no-margin pull-right">
@@ -261,7 +262,7 @@
                     </ul>
                 </div>
             </div>
-        </div>                
+        </div>
     </div>
 </section>
 @endsection

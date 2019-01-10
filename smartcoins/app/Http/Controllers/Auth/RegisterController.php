@@ -73,6 +73,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+        // create wallet
+
         // assign member role to newly registered member
         $newUser->assignRole('member');
         return $newUser;
