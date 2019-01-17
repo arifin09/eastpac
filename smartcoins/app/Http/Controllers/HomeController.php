@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\SiteConfig;
+use App\Kyc;
 use App\User;
 use Auth;
 
@@ -86,7 +87,12 @@ class HomeController extends Controller
     public function kycapp()
     {
         $title = "KYC App";
-        return view('layouts.sections.kycapp', compact('title'));
+        $kycStatus = 0;        
+        $getData = Kyc::where('user_id', Auth::user()->id);
+        if ($getData->count() > 0) {
+            $kycStatus = $getData->first()->status;
+        }
+        return view('layouts.sections.kycapp', compact('title', 'kycStatus'));
     }
 
     public function dshareIndex()

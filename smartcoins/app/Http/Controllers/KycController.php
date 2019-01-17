@@ -23,13 +23,24 @@ class KycController extends Controller
     public function index()
     {
         // dd(Auth::user()->hasVerifiedEmail());
+        // $kycStatus = 0;
         $title = 'Verify your identity to participate in tokensale.';
+        // $getData = Kyc::where('user_id', Auth::user()->id);
+        // if ($getData->count() > 0) {
+        //     $kycStatus = $getData->first()->status;
+        // }
+
         return view($this->view_dir. 'index', compact('title'));
+
+
     }
 
     public function store(Request $request)
     {
+
         $file = $request->file('document_file');
+
+        //dd($request->file('document_file'));
 
         $validator = Validator::make($request->all(), [
             'first_name'    => 'required',
@@ -49,11 +60,16 @@ class KycController extends Controller
             'wallet_address' => 'required',
         ]);
 
+       // dd($request->all());
+
+
         if($validator->fails()) {
+            //dd($validator->errors());
             return redirect()->back()->withErrors($validator);
         } else {
-            dd($file->extension());
-            Kyc::updateOrcreate([
+           // dd($file->extension());
+            
+            $add=Kyc::updateOrcreate([
                 'user_id'       => Auth::user()->id,
             ],
             [
@@ -64,21 +80,33 @@ class KycController extends Controller
                 'mobilenumber'  => $request->mobilenumber,
                 'date_of_birth' => $request->date_of_birth,
                 'address_1'     => $request->address_1,
-                'address_2'     => $request->address_2t_name,
+                'address_2'     => $request->address_2,
                 'nationality'   => $request->nationality,
                 'city'          => $request->city,
                 'state'         => $request->state,
                 'document_type' => $request->document_type,
-                'document_file' => $request->document_file,
+                'document_file' => $request->document_file->getClientOriginalName(),
                 'zip_code'      => $request->zip_code,
                 'wallet_type'   => $request->wallet_type,
                 'wallet_address' => $request->wallet_address,
             ]);
+            if (isset($request->document_file)) {
+                // dd($add);
+                $add->addMediaFromRequest("document_file")->toMediaCollection('document_files');
 
-            return redirect()->back()->with('msg', 'You have completed the process of KYC.');
+            }
+
+            return view($this->view_dir. 'kyc-thank-you');
         }
 
 
+    }
+
+    public function thankYou()
+
+    {
+       // $images = Image::find($id);
+         return view($this->view_dir. 'kyc-thank-you');
     }
 
 }

@@ -26,10 +26,10 @@ class CreateKycsTable extends Migration
             $table->string('nationality');
             $table->string('city');
             $table->string('state');
-            $table->string('document_type'); // id : [1,2,3]
-            $table->text('document_file');
+            $table->string('document_type')->nullable(); // id : [1,2,3]
+            $table->text('document_file')->nullable();
             $table->string('zip_code');
-            $table->string('wallet_type'); // id : [1,2,3]
+            $table->string('wallet_type')->nullable(); // id : [1,2,3]
             $table->string('wallet_address')->unique();
             $table->integer('status')->default(1)->nullable(); // 1 = pending, 2 = progress, 3 = approve, 4 = reject
             $table->timestamps();

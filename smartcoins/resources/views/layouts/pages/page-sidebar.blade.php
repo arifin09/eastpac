@@ -102,6 +102,17 @@
                         
                 </ul>
             </li>
+
+            <li 
+                {{ (Route::currentRouteName() == "kyc.index") ? 'active' : '' }}">
+                <a href="#">
+             <a href="{{ route('kyc.index') }}"><i class="fa fa-circle-o"></i> Kyc Admin</a>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                </a>
+            </li>
+
             <li class="{{ (Route::currentRouteName() == "admin.config.index") ? 'active' : '' }}"><a href="{{route('admin.config.index')}}"><i class="fa fa-gears"></i> <span>Site Config</span></a></li>
             @endrole
         </ul>

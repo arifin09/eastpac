@@ -57,6 +57,7 @@ Route::middleware(['auth', 'verified'])->prefix('home')->group(function() {
     Route::get('security','SecurityController@index')->name('home.security');
     Route::get('kycapp-form','KycController@index')->name('home.kycapp.form');
     Route::post('kycapp-form','KycController@store')->name('home.kycapp.store');
+    Route::get('kyc-thank-you','KycController@thankYou')->name('home.kycThankyou');
     Route::get('d-share', 'HomeController@dshareIndex')->name('home.dshare');
 
     // referral
@@ -73,6 +74,20 @@ Route::middleware(['auth', 'verified'])->prefix('setting')->group(function() {
     Route::post('profile/userwallet','ProfileController@UserWallet' )->name('UserWallet');
     Route::post('profile/useraccount','ProfileController@UserAccounts')->name('UserAccounts');
     Route::post('profile/updateprofile', 'ProfileController@UpdatePersonalProfile')->name('updatePersonalProfile');
+});
+
+    //kyc
+Route::middleware(['auth', 'verified'])->prefix('setting')->group(function() {
+    // kyc
+
+   // Route::get('home/kyc', 'KycController@index')->name('kyc.index');
+   // Route::get('/kyc/create', 'KycController@create')->name('kyc.create');
+   // Route::post('/kyc/store', 'KycController@store')->name('kyc.store');
+   // Route::post('kyc/upload', 'KycController@upload')->name('kyc.upload');
+   // Route::get('/kyc/edit/{id}', 'KycController@edit')->name('kyc.edit');
+   // Route::post('/kyc/update/{id}', 'KycController@update')->name('kyc.update');
+   // Route::get('kyc/delete/{id}', 'KycController@destroy')->name('kyc.delete');    
+    
 });
 
 // administrator
@@ -125,7 +140,21 @@ Route::middleware(['auth','role:administrator'])->prefix('administrator')->group
     Route::get('/images/edit/{id}', 'ImageController@edit')->name('images.edit');
     Route::post('/images/update/{id}', 'ImageController@update')->name('images.update');
     Route::get('images/delete/{id}', 'ImageController@destroy')->name('images.destroy');
+
+        //Kyc
+    Route::get('/kyc', 'AdminKycController@index')->name('kyc.index');
+    Route::get('/kyc/create', 'AdminKycController@create')->name('kyc.create');
+    Route::post('/kyc/store', 'AdminKycController@store')->name('kyc.store');
+    Route::get('/kyc/show/{id}', 'AdminKycController@kycShow')->name('kyc.show');
+    Route::post('kyc/upload', 'AdminKycController@upload')->name('kyc.upload');
+    Route::get('/kyc/edit/{id}', 'AdminKycController@edit')->name('kyc.edit');
+    Route::post('/kyc/update/{id}', 'AdminKycController@kycUpdate')->name('kyc.update');
+    Route::get('kyc/delete/{id}', 'AdminKycController@destroy')->name('kyc.destroy');
+    Route::get("/kyc/getlist","AdminKycController@GetKycList")->name('kyc.getlist');
+    Route::get('/kyc/updatestatus/', 'AdminKycController@updatestatus')->name('kyc.update_status');
 });
+
+
 
 Route::middleware(['auth','role:administrator'])
     ->prefix('edit-landing-page-content')->group(function() {

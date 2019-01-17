@@ -1,6 +1,35 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>EASTPAC | Form KYC Application</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="jquery.dataTables.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!--DataTables-->
+  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.css">
+  <link rel="stylesheet" href="dist/css/skins/skin-black.css">
+<!--  <link rel="stylesheet" href="dist/css/contribution.css">-->
+    
+  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="plugins/iCheck/all.css">
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+    
 
-@section('css')
 <style>
 .status {
     padding: 40px 20px;
@@ -23,11 +52,11 @@
     margin: 0 auto 10px;
 /*    border: 2px solid #c8d8f0;*/
 }
-
+    
 .imgicon{
-    margin-top: 20%;
+  margin-top: 20%;      
 }
-
+    
 .btn-primary {
     background: #2b56f5;
     border-color: #2b56f5;
@@ -60,7 +89,7 @@
 	position: relative;
     
 }
-SS
+
 .payment-item>span {
 	display: block;
 	font-size: 13px;
@@ -170,45 +199,45 @@ SS
     padding-bottom: 10px;
     text-transform: uppercase;
 }
-</style>
-@endsection
 
-@section('content')
-<section class="content">
-     <div class="row">
-          @if ($errors->any())
-              <div class="alert alert-danger">
-                  <ul>
-                      @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                      @endforeach
-                  </ul>
-              </div>
-          @endif
+</style>
+
+<body class="hold-transition skin-black fixed">
+<div class="wrapper">
+
+<?php include('page-header.html') ?>
+  <!-- Left side column. contains the logo and sidebar -->
+
+<?php include('page-sidebar.html') ?>
+  <!-- Content Wrapper. Contains page content -->
+
+<div class="content-wrapper">
+    <section class="content">
+      <div class="row">
         <div class="col-sm-12" style="margin-top: 10px">
             <div class="box box-warning">
                 <div class="box-header with-border">
                     <h2 class="box-title">Begin your ID-Verification</h2>
                     <div class="box-body">
                         <p>Verify your identity to participate in tokensale.</p>
-                        <div class="status status-empty">
-                            <div class="step-head" style="display: flex; align-items: center"><div class="step-number">01</div><div class="step-head-text"><h4 class="pull-left">Personal Details</h4></div>
-                            </div>
-                            <hr>
-                            <form action="{{ route('home.kycapp.store') }}" method="POST" enctype="multipart/form-data">
-                            {{ csrf_field() }}
+
+                          <div class="status status-empty">
+                                <div class="step-head" style="display: flex; align-items: center"><div class="step-number">01</div><div class="step-head-text"><h4 class="pull-left">Personal Details</h4></div>
+                                </div>
+                                <hr>
+                                
                                 <p><i class="fa fa-info-circle" style="color:#f39c12"></i> Please type carefully and fill out the form with your personal details. Your can’t edit these details once you submitted the form.</p>
                                 <div class="row">
                                     <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="first-name">First Name</label>
-                                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="" >
+                                            <input type="text" class="form-control" id="first-name" placeholder="">
                                           </div>
                                     </div>
                                     <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="last-name">Last Name</label>
-                                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="">
+                                            <input type="text" class="form-control" id="last-name" placeholder="">
                                           </div>
                                     </div>
                                   
@@ -217,13 +246,13 @@ SS
                                      <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="email">Email Address</label>
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="">
+                                            <input type="email" class="form-control" id="email" placeholder="">
                                           </div>
                                     </div>
                                     <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="phone">Phone Number</label>
-                                            <input type="number" class="form-control" id="mobilenumber" name="mobilenumber" placeholder="">
+                                            <input type="number" class="form-control" id="phone" placeholder="">
                                           </div>
                                     </div>
                                   
@@ -232,7 +261,7 @@ SS
                                     <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="birthdate">Date of Birth</label>
-                                            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" data-date-format="yyyy/mm/dd" placeholder="">
+                                            <input type="text" class="form-control" id="birthdate"  data-date-format="yyyy/mm/dd" placeholder="">
                                           </div>
                                     </div>
                                    
@@ -244,13 +273,13 @@ SS
                                     <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="address">Address Line 1</label>
-                                            <input type="text" class="form-control" id="address_1" name="address_1" placeholder="">
+                                            <input type="text" class="form-control" id="address" placeholder="">
                                           </div>
                                     </div>
                                     <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="address2">Address Line 2</label>
-                                            <input type="text" class="form-control" id="address_2" name="address_2" placeholder="">
+                                            <input type="text" class="form-control" id="address2" placeholder="">
                                           </div>
                                     </div>
                               </div>
@@ -258,13 +287,13 @@ SS
                                     <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="city">City</label>
-                                            <input type="text" class="form-control" id="city" name="city" placeholder="">
+                                            <input type="text" class="form-control" id="city" placeholder="">
                                           </div>
                                     </div>
                                     <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="state">State</label>
-                                            <input type="text" class="form-control" id="state" name="state" placeholder="">
+                                            <input type="text" class="form-control" id="state" placeholder="">
                                           </div>
                                     </div>
                               </div>
@@ -272,19 +301,18 @@ SS
                                     <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="nationality">Nationality</label>
-                                            <input type="text" class="form-control" id="nationality" name="nationality" placeholder="">
+                                            <input type="text" class="form-control" id="nationality" placeholder="">
                                           </div>
                                     </div>
                                     <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="zip-code">Zip Code</label>
-                                            <input type="text" class="form-control" id="zip_code" name="zip_code" placeholder="">
+                                            <input type="text" class="form-control" id="zip-code" placeholder="">
                                           </div>
                                     </div>
                               </div>
                               <hr>
-                              <!--point 02-->
-                               <div class="step-head" style="display: flex; align-items: center"><div class="step-number">02</div><div class="step-head-text"><h4 class="pull-left">Document Upload</h4></div>
+                              <div class="step-head" style="display: flex; align-items: center"><div class="step-number">02</div><div class="step-head-text"><h4 class="pull-left">Document Upload</h4></div>
                               </div>
                               <hr>
                               <p><i class="fa fa-info-circle" style="color:#f39c12"></i> In order to complete, please upload any of the following personal document.</p>
@@ -293,37 +321,38 @@ SS
                                     <div class="row">
                                        <div class="col-md-2 col-sm-6">
                                             <div class="payment-item">
-                                                <input class="payment-check" type="radio" id="passport" name="document_type" value="1" checked="">
+                                                <input class="payment-check" type="radio" id="passport" name="payOption" value="1" checked="">
                                                 <label for="passport">
-                                                    <img src="{{asset('dist/img/icon-passport.png')}}" width="50px"; height="50px"; alt="icon"><br>
+                                                    <img src="dist/img/icon-passport.png" width="50px"; height="50px"; alt="icon"><br>
                                                     <span class="payment-cur">Passport</span>
                                                 </label>                                               
                                             </div>       
-                                       </div>
+                                       </div><!-- .col -->
                                         <div class="col-md-2 col-sm-6">
                                             <div class="payment-item">
-                                                <input class="payment-check" type="radio" id="national-card" name="document_type" value="2" checked="">
+                                                <input class="payment-check" type="radio" id="national-card" name="payOption" value="2" checked="">
                                                 <label for="national-card">
-                                                    <img src="{{asset('dist/img/icon-national-id.png')}}" width="50px"; height="50px"; alt="icon"><br>
+                                                    <img src="dist/img/icon-national-id.png" width="50px"; height="50px"; alt="icon"><br>
                                                     <span class="payment-cur">National Card</span>
                                                 </label>
                                             
                                             </div>       
-                                       </div>
+                                       </div><!-- .col -->
                                        <div class="col-md-2 col-sm-6">
                                             <div class="payment-item">
-                                                <input class="payment-check" type="radio" id="driver-licence" name="document_type" value="3" checked="">
+                                                <input class="payment-check" type="radio" id="driver-licence" name="payOption" value="3" checked="">
                                                 <label for="driver-licence">
-                                                    <img src="{{asset('dist/img/icon-licence.png')}}" width="50px"; height="50px"; alt="icon"><br>
+                                                    <img src="dist/img/icon-licence.png" width="50px"; height="50px"; alt="icon"><br>
                                                     <span class="payment-cur">Driver License</span>
                                                 </label>
                                             
                                             </div>       
-                                       </div>
+                                       </div><!-- .col -->
                                     </div>
+                                    
                               </div>
 
-                               <div class="row">
+                              <div class="row">
                                 <div class="col-md-6">
                                     <p><b>To avoid delays when verifying account, Please make sure bellow:</b></p>
                                     <p><i class="fa fa-check"></i> Chosen credential must not be expaired.</p>
@@ -331,18 +360,11 @@ SS
                                     <p><i class="fa fa-check"></i> Make sure that there is no light glare on the card.</p>
                                     <br>
                                     <p><b>Upload Here Your Passport Copy</b></p>
-                                    <div class="form-group">
-                                      <label for="upload_images" class="col-sm-3">Upload Here Your Passport Copy</label>
-                                      <div class="col-sm-9" id="upload-input">
-                                          <input id="upload-image" type="file" class="form-control" name="document_file">
-                                            
-                                      </div>
-                                  </div>
                                 </div>
                               </div>
 
                               <!-- Start upload-zone dropzone dz-clickable -->
-                              {{-- <div class="col-md-6">
+                              <div class="col-md-6">
                               <div class="upload-zone dropzone dz-clickable">
                                 <div class="dz-message" data-dz-message>
                                     <span class="dz-message-text">Drag and Drop File</span>
@@ -350,44 +372,43 @@ SS
                                     <button class="btn btn-warning">Browse</button>
                                 </div>
                               </div>
-                              </div> --}}
+                              </div>
 
                               <!-- end col -->
                               <!-- End upload-zone dropzone dz-clickable -->
 
-                               {{--  <div class="col-md-1"></div>
+                                <div class="col-md-1"></div>
+
                                 <div class="col-sm-3 d-none d-sm-block">
                                 <div class="mx-md-3">
-                                    <img src="{{asset('dist/img/vector-passport.png')}}"/ width="200px;" height="200px"; alt="vector">
+                                    <img src="dist/img/vector-passport.png"/ width="200px;" height="200px"; alt="vector">
                                 </div>
-                                </div> --}}
+                                </div>
                         
                               <div class="col-md-12">  
                               <hr>
-                              <div class="step-head" style="display: flex; align-items: center"><div class="step-number">03</div><div class="step-head-text"><h4 class="pull-left">Your Paying Wallet</h4></div>
-                              </div>
+                                 <div class="step-head" style="display: flex; align-items: center"><div class="step-number">03</div><div class="step-head-text"><h4 class="pull-left">Your Paying Wallet</h4></div>
+                                 </div>
                               <hr>
-                              <div class="row" style="">
+                              <div class="row" style="display:none;">
                                     <div class="col-md-6">
                                          <div class="form-group">
                                             <label for="wallet">Select Wallet</label>
-                                            <select id="wallet_type" class="form-control" name="wallet_type">
-                                              <option value="1">Ethereum</option>
-                                              <option value="2">Ethereum2</option>
-                                            </select>
+                                            <select id="wallet"><option value="1">Ethereum</option></select>
                                           </div>
                                     </div>
                               </div>
-                              
+                              </div>
                              
                               <div class="row">
                                     <div class="col-md-6">
                                          <div class="form-group">
-                                            <label for="wallet_address">Your Address for1 tokens:</label>
-                                            <input type="text" class="form-control" id="wallet_address" name="wallet_address" value="">
+                                            <label for="nationality">Your Address for tokens:</label>
+                                            <input type="text" class="form-control" id="nationality" value="0xFf2463e6c45B6263638168c54e8049842dFB73dF">
                                              <small style="color:grey;">Note: Address should be ERC20-compliant.</small>
                                           </div>
                                     </div>
+                                    
                               </div>
                               <div class="row">
                                     <div class="col-md-6">
@@ -403,16 +424,11 @@ SS
                                               All The Personal Information I Have Entered Is Correct.
                                              </label>
                                           </div>
-                                    </div> 
+                                    </div>
                                     
                               </div>
-                              <div class="row">
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-warning" href="{{ route('home.kycThankyou') }}">Process for Verify</button>  
-                                </div>
-                              </div>
-                             </form>
                           </div>
+
                     </div>
               </div>
                 
@@ -420,47 +436,63 @@ SS
           </div>
         </div>
       </div>
-    
-
-    {{-- <div class="row">
-        <div class="col-sm-12" style="margin-top: 10px">
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h2 class="box-title">Identity Verification - KYC</h2>
-                    <div class="box-body">
-                        <form action="{{ route('home.kycapp.store') }}" method="POST" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
-                                <input type="file" id="exampleInputFile" name="document_file">
-                                <p class="help-block">Example block-level help text here.</p>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                <input type="checkbox"> Check me out
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
+      
 </section>
-@endsection
 
-@section('script')
- 
-@endsection
+</div>
+</div>
+<!--Footer section-->
+<?php include('page-footer.html'); ?>
+
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- Sparkline -->
+<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- jvectormap  -->
+<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- SlimScroll -->
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- ChartJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+<script src="bower_components/chart.js/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<!-- <script src="dist/js/pages/dashboard2.js"></script> -->
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="bower_components/Flot/jquery.flot.js"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="bower_components/Flot/jquery.flot.resize.js"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="bower_components/Flot/jquery.flot.pie.js"></script>
+<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+<script src="bower_components/Flot/jquery.flot.categories.js"></script>
+<script src="bower_components/chart.js/amcharts.js"></script>
+<script src="bower_components/chart.js/serial.js"></script>
+<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<script>
+    //Date picker
+    $('#birthdate').datepicker({
+      autoclose: true
+    })
+    
+     //Red color scheme for iCheck
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass   : 'iradio_minimal-red'
+    })
+</script>
+
+</body>
+</html>
